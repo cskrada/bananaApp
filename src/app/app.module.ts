@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { ClientsPage } from '../pages/clients/clients';
 import { SeeclientPage } from '../pages/seeclient/seeclient';
 import { AddclientPage } from '../pages/addclient/addclient';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddclientPage } from '../pages/addclient/addclient';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

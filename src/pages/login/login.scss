@@ -1,3 +1,32 @@
-page-login {
+page-login{
+	font-family: roboto;
+	font-size: 15px;
+	color: #525252;
 
+	.titulo{
+		color: #525252;
+	}
+	img{
+		width: 40%;
+		height: auto;
+	}
+	ion-item{
+		width: 50%;
+	}
+	.olvideclave{
+		font-size: 1em;
+		color: #488aff;
+		position: relative;
+		padding-top: 1.3em;
+	}
+	.etiqueta{
+		color: #525252;
+		position: relative;
+		padding-top: 1.3em;
+	}
 }
+
+
+	
+	
+
