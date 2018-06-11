@@ -4,6 +4,12 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { InputTextModule } from 'primeng/primeng';
+import { ButtonModule } from 'primeng/primeng';
+import { DialogModule } from 'primeng/primeng';
+
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
@@ -24,7 +30,11 @@ import { ChartsModule } from 'ng2-charts';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    ChartsModule
+    ChartsModule,
+    InputTextModule,
+    ButtonModule,
+    FormsModule,
+    DialogModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
