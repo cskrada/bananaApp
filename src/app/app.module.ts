@@ -10,6 +10,9 @@ import { DialogModule } from 'primeng/primeng';
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
@@ -42,7 +45,9 @@ export const firebaseConfig = {
     InputTextModule,
     ButtonModule,
     FormsModule,
-    DialogModule
+    DialogModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
