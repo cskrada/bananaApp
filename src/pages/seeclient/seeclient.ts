@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the SeeclientPage page.
@@ -15,11 +15,54 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SeeclientPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public alerta: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeeclientPage');
+  }
+  archived(){
+  	let alert = this.alerta.create({
+  		title : 'Archivar Cliente',
+  		message : '¿Esta seguro que desea archivar este cliente?',
+  		buttons: [
+	        {	
+	          text: 'Cancelar',
+	          handler: data => {
+	            console.log('Cancelado!');
+	          }
+	        },
+	        {
+	          text: 'Archivar',
+	          handler: data => {
+	            console.log('Archivado!');
+	          }
+	        }
+      	]
+  	});
+  	alert.present();
+  }
+
+  modified(){
+  	let alert2 = this.alerta.create({
+  		title : 'Modificar Cliente',
+  		message : '¿Esta seguro que desea modificar este cliente?',
+  		buttons: [
+	        {	
+	          text: 'Cancelar',
+	          handler: data => {
+	            console.log('Cancelado!');
+	          }
+	        },
+	        {
+	          text: 'Modificar',
+	          handler: data => {
+	            console.log('Modificado!');
+	          }
+	        }
+      	]
+  	});
+  	alert2.present();
   }
 
 }
