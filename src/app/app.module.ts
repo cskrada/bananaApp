@@ -18,6 +18,14 @@ import { SeeclientPage } from '../pages/seeclient/seeclient';
 import { AddclientPage } from '../pages/addclient/addclient';
 import { ChartsModule } from 'ng2-charts';
 
+export const firebaseConfig = {
+  apiKey: "AIzaSyBpIBL-h59BW8L3zHF22eHcMabZtkh4hMA",
+  authDomain: "bananaapp8.firebaseapp.com",
+  databaseURL: "https://bananaapp8.firebaseio.com",
+  storageBucket: "bananaapp8.appspot.com",
+  messagingSenderId: '623763613345'
+};
+
 @NgModule({
   declarations: [
     MyApp,
