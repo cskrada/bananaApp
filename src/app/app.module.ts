@@ -19,6 +19,9 @@ import { LoginPage } from '../pages/login/login';
 import { ClientsPage } from '../pages/clients/clients';
 import { SeeclientPage } from '../pages/seeclient/seeclient';
 import { AddclientPage } from '../pages/addclient/addclient';
+import { SignupPage } from '../pages/signup/signup';
+import { ResetpasswordPage } from '../pages/resetpassword/resetpassword';
+
 import { ChartsModule } from 'ng2-charts';
 
 export const firebaseConfig = {
@@ -36,7 +39,9 @@ export const firebaseConfig = {
     LoginPage,
     ClientsPage,
     SeeclientPage,
-    AddclientPage
+    AddclientPage,
+    SignupPage,
+    ResetpasswordPage
   ],
   imports: [
     BrowserModule,
@@ -45,6 +50,7 @@ export const firebaseConfig = {
     InputTextModule,
     ButtonModule,
     FormsModule,
+    ReactiveFormsModule,
     DialogModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule
@@ -56,7 +62,9 @@ export const firebaseConfig = {
     LoginPage,
     ClientsPage,
     SeeclientPage,
-    AddclientPage
+    AddclientPage,
+    SignupPage,
+    ResetpasswordPage
   ],
   providers: [
     StatusBar,

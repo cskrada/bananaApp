@@ -13,32 +13,38 @@
 			</ion-row>
 			<ion-row>
 				<ion-col col-12 text-center>
-					<ion-list>
-						<ion-item>
-							<ion-label floating>Correo electrónico</ion-label>
-							<ion-input type="email"></ion-input>
-						</ion-item>
-						<ion-item>
-							<ion-label floating>Contraseña</ion-label>
-							<ion-input type="password"></ion-input>
-						</ion-item>
-					</ion-list>
-					<div padding-top>
-						<button ion-button color="primary" (click)="homePage()">
-							Iniciar sesión
-						</button> 
-					</div>
+					<form [formGroup]="myForm" (ngSubmit)="loginUser()">
+						<ion-list>
+							<ion-item>
+								<ion-label floating>Correo electrónico</ion-label>
+								<ion-input formControlName="email" type="email"></ion-input>
+							</ion-item>
+							<ion-item>
+								<ion-label floating>Contraseña</ion-label>
+								<ion-input formControlName="password" type="password"></ion-input>
+							</ion-item>
+						</ion-list>
+						<div padding-top>
+							<button ion-button color="primary" type="submit" [disabled]="!myForm.valid">
+								Iniciar sesión
+							</button> 
+						</div>
+					</form>
 					<div class="olvideclave">
 						
 						<span>
 							<u>
-								He olvidado mi contraseña
+								<a ion-button clear (click)="goToResetPassword()">
+									He olvidado mi contraseña
+								</a>
 							</u>
 						</span>
 					</div>
 					<div class="etiqueta">
 						<span>
-							¿Todavía no usas BananaApp?
+							<a ion-button clear (click)="goToSignup()">
+								¿Todavía no usas BananaApp?
+							</a>
 						</span>
 					</div>
 				</ion-col>
