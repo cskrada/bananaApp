@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
+// import * as firebase from 'firebase/app';
 
 
 import { ClientsPage } from '../clients/clients';
