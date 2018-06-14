@@ -5,7 +5,7 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 
 import { ClientsPage } from '../clients/clients';
-// import { LoginPage } from '../login/login';
+//import { LoginPage } from '../login/login';
 
 
 @Component({
