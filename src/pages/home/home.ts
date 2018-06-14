@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import { Observable } from 'rxjs/Observable';
+
 
 import { ClientsPage } from '../clients/clients';
-//import { LoginPage } from '../login/login';
+import { LoginPage } from '../login/login';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { ClientsPage } from '../clients/clients';
   templateUrl: 'home.html'
 })
 export class HomePage {
- user: Observable<firebase.User>;
+ 
   // grafico redondo
     public pieChartLabels:string[] = ['Compras', 'Ganancias', 'Ventas'];
     public pieChartData:number[] = [100, 500, 300];
@@ -76,7 +76,7 @@ export class HomePage {
 
 // CONSTRUCTOR ------------------------------------------------------------
   constructor(public navCtrl: NavController, public afAuth: AngularFireAuth) {
-    this.user = afAuth.authState;
+   
   }
 
   ionViewDidLoad() {
@@ -87,8 +87,9 @@ export class HomePage {
   	this.navCtrl.push(ClientsPage);
   }
 
-  logout() {
+  logOut() {
     this.afAuth.auth.signOut();
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }
