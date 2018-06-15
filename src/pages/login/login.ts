@@ -32,7 +32,14 @@ export class LoginPage {
       password: ['', Validators.required]
     });
     this.user = afAuth.authState;
-    
+
+    this.afAuth.authState.subscribe(res => {
+      if (res && res.uid) {
+      console.log('user is logged in');
+      } else {
+      console.log('user not logged in');
+      }
+      });
   }
 
   ionViewDidLoad() {
@@ -75,5 +82,11 @@ export class LoginPage {
 
   goToResetPassword(){
     this.navCtrl.push(ResetpasswordPage);
+  }
+
+    logOut() {
+      this.afAuth.auth.signOut();
+      // console.log("aaaaaaaaaaaaa");
+      this.navCtrl.setRoot(LoginPage);
   }
 }

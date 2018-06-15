@@ -76,7 +76,7 @@ export class HomePage {
 
 // CONSTRUCTOR ------------------------------------------------------------
   constructor(public navCtrl: NavController, public afAuth: AngularFireAuth) {
-   
+
   }
 
   ionViewDidLoad() {
