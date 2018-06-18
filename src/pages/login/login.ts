@@ -3,7 +3,7 @@ import { IonicPage, NavController,LoadingController,Loading, AlertController } f
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import { Observable } from 'rxjs/Observable';
+// import { Observable } from 'rxjs/Observable';
 
 import { HomePage } from '../home/home';
 import { SignupPage } from '../signup/signup';
@@ -18,7 +18,7 @@ import { ResetpasswordPage } from '../resetpassword/resetpassword';
 export class LoginPage {
   
   myForm: FormGroup;
-  user: Observable<firebase.User>;
+  // user: Observable<firebase.User>;
   public loading:Loading;
 
   constructor(public navCtrl: NavController,
@@ -31,15 +31,16 @@ export class LoginPage {
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
-    this.user = afAuth.authState;
-
-    this.afAuth.authState.subscribe(res => {
-      if (res && res.uid) {
-      console.log('user is logged in');
-      } else {
-      console.log('user not logged in');
-      }
-      });
+      
+      
+    // this.user = afAuth.authState;
+    // this.afAuth.authState.subscribe(res => {
+    //   if (res && res.uid) {
+    //   console.log('user is logged in');
+    //   } else {
+    //   console.log('user not logged in');
+    //   }
+    //   });
   }
 
   ionViewDidLoad() {
