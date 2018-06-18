@@ -25,18 +25,18 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+    this.is_logged = false;
+    this.user = afAuth.authState;
 
-  this.user = afAuth.authState;
-
-  this.afAuth.authState.subscribe(res => {
-      if (res && res.uid && this.is_logged == false) {
-        console.log('user is logged in');
-        this.is_logged = true;
-      }else{
-          console.log('user not logged in');
-          this.is_logged = true;
-      }
-      });
+      this.afAuth.authState.subscribe(res => {
+          if (res && res.uid && this.is_logged == false) {
+            console.log('user is logged in');
+            this.is_logged = true;
+          }else{
+              console.log('user not logged in');
+            this.is_logged = false;
+          }
+          });
 
 
   }
