@@ -85,9 +85,9 @@ export class LoginPage {
     this.navCtrl.push(ResetpasswordPage);
   }
 
-    logOut() {
-      this.afAuth.auth.signOut();
-      // console.log("aaaaaaaaaaaaa");
-      this.navCtrl.setRoot(LoginPage);
-  }
+  //   logOut() {
+  //     this.afAuth.auth.signOut();
+  //     // console.log("aaaaaaaaaaaaa");
+  //     this.navCtrl.setRoot(LoginPage);
+  // }
 }

@@ -51,12 +51,24 @@ initializeApp() {
       this.splashScreen.hide();
     });
     this.is_logged = false;
+      if ( this.is_logged ) {
+        this.is_logged = false;
+      }else{
+        this.is_logged = false; 
+      }
   }
   
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  logOut() {
+    this.is_logged = false; 
+    this.afAuth.auth.signOut();
+    // console.log("aaaaaaaaaaaaa");
+    this.nav.setRoot(LoginPage);
   }
 
 }
