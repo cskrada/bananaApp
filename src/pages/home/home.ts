@@ -75,7 +75,7 @@ export class HomePage {
   // fin de grafica lineal
 
 // CONSTRUCTOR ------------------------------------------------------------
-  constructor(public navCtrl: NavController, public afAuth: AngularFireAuth) {
+  constructor(public navCtrl: NavController, public afAuth : AngularFireAuth) {
 
   }
 
