@@ -1,3 +1,4 @@
+<!-- dentro de la etiqueta header se encuentra la barra de navegacion -->
 <ion-header>
   <ion-navbar color="bananap">
     <ion-grid no-padding>
@@ -27,29 +28,28 @@
         </ion-col>
       </ion-row>
     </ion-grid> 
-
    </ion-navbar>
 </ion-header>
-
+<!-- ------------------fin de Header----------------------->
 <ion-content padding>
 	<ion-grid no-padding>
+    <!-- barra de busqueda y de agregar un nuevo cliente -->
 		<ion-row>
 			<ion-col col-2 text-center align-self-center>
-
           <ion-buttons start>
             <button ion-button icon-only clear color="bananaf" (click)="addClient()">
             <ion-icon name="person-add"></ion-icon>
             </button>
           </ion-buttons>
-
 			</ion-col>
 			<ion-col col-10>
 				<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 			</ion-col>
 		</ion-row>
-	</ion-grid>	  	
+    <!-- FIN de barra de busqueda y de agregar un nuevo cliente -->
+	</ion-grid>
+  	  	<!-- lista dinamica  -->
 	<ion-list>
-
     <button ion-item *ngFor="let item of items" class="paddinglr fuente" (click)="seeClient()">
       <b>{{ item.name }}</b><br>
         <span>
@@ -60,4 +60,5 @@
         </span>
     </button>
 	</ion-list>
+  <!-- fin de lista dinamica -->
 </ion-content>
