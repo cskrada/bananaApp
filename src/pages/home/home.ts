@@ -74,7 +74,7 @@ export class HomePage {
 }
   // fin de grafica lineal
 
-// CONSTRUCTOR ------------------------------------------------------------
+// CONSTRUCTOR ----------------------------------------------------------------------------------------
   constructor(public navCtrl: NavController, public afAuth : AngularFireAuth) {
 
   }
@@ -87,10 +87,10 @@ export class HomePage {
   	this.navCtrl.push(ClientsPage);
   }
 
-  logOut() {
-    this.afAuth.auth.signOut();
-    this.navCtrl.setRoot(LoginPage);
-  }
+  // logOut() {
+  //   this.afAuth.auth.signOut();
+  //   this.navCtrl.setRoot(LoginPage);
+  // }
 
 }
  

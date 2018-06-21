@@ -23,8 +23,9 @@ export class MyApp {
 
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public afAuth: AngularFireAuth, public menu: MenuController) {
+    this.menu.enable(false); 
     this.is_logged = false;
-
+    
     this.user = afAuth.authState;
       this.afAuth.authState.subscribe(res => {
           if (res && res.uid) {
@@ -33,7 +34,6 @@ export class MyApp {
 
           }else{
             this.is_logged = false;
-            
             console.log('user not logged in'+this.is_logged);
           }
       });
