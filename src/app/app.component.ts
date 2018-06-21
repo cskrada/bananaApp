@@ -27,10 +27,8 @@ export class MyApp {
               public splashScreen: SplashScreen,
               public afAuth: AngularFireAuth,
               public menu: MenuController){
-    // this.menu.enable(false); 
     this.afAuth.auth.signOut();
     this.is_logged= false;
-    
     
     this.user = afAuth.authState;
       this.afAuth.authState.subscribe(res => {
