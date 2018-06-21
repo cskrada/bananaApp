@@ -1,10 +1,11 @@
+//importacion de librerias
 import { Component } from '@angular/core';
 import { IonicPage, NavController,LoadingController,Loading, AlertController, MenuController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-// import { Observable } from 'rxjs/Observable';
 
+//importacion de paginas
 import { HomePage } from '../home/home';
 import { SignupPage } from '../signup/signup';
 import { ResetpasswordPage } from '../resetpassword/resetpassword';
@@ -18,7 +19,6 @@ import { ResetpasswordPage } from '../resetpassword/resetpassword';
 export class LoginPage {
   
   myForm: FormGroup;
-  // user: Observable<firebase.User>;
   public loading:Loading;
 
   constructor(public navCtrl: NavController,
@@ -27,27 +27,19 @@ export class LoginPage {
               public alertCtrl: AlertController,
               public loadingCtrl: LoadingController,
               private menu : MenuController){
-    this.menu.enable (false); 
     
     this.myForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
     }); 
       
-    // this.user = afAuth.authState;
-    // this.afAuth.authState.subscribe(res => {
-    //   if (res && res.uid) {
-    //   console.log('user is logged in');
-    //   } else {
-    //   console.log('user not logged in');
-    //   }
-    //   });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
+  // este metodo hace la validacion de los datos ingresados, esta añadida el evento de loading
   loginUser(){
 
     console.log("Email:" + this.myForm.value.email);
@@ -78,17 +70,15 @@ export class LoginPage {
     this.loading.present();
   }
 
+
+  //goToSignup(): redirige a la pagina para crear un usuario (opcional)
   goToSignup(){
     this.navCtrl.push(SignupPage);
   }
 
+  //goToResetPassword(): redirige a la pagina para recuperar la contraseña
   goToResetPassword(){
     this.navCtrl.push(ResetpasswordPage);
   }
 
-  //   logOut() {
-  //     this.afAuth.auth.signOut();
-  //     // console.log("aaaaaaaaaaaaa");
-  //     this.navCtrl.setRoot(LoginPage);
-  // }
 }

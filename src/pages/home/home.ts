@@ -1,8 +1,9 @@
+// importacion de librerias
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-// import * as firebase from 'firebase/app';
 
+// importacion de paginas
 import { ClientsPage } from '../clients/clients';
 
 @Component({
