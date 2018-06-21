@@ -26,15 +26,13 @@ export class LoginPage {
               public afAuth: AngularFireAuth,
               public alertCtrl: AlertController,
               public loadingCtrl: LoadingController,
-              private menu : MenuController
-              ){
+              private menu : MenuController){
     this.menu.enable (false); 
     
     this.myForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
-    });
-      
+    }); 
       
     // this.user = afAuth.authState;
     // this.afAuth.authState.subscribe(res => {

@@ -71,8 +71,8 @@ export class HomePage {
        * so one way around it, is to clone the data, change it and then
        * assign it;
        */
-}
-  // fin de grafica lineal
+}// fin de grafica lineal
+
 
 // CONSTRUCTOR ----------------------------------------------------------------------------------------
   constructor(public navCtrl: NavController, public afAuth : AngularFireAuth) {
@@ -92,5 +92,9 @@ export class HomePage {
   //   this.navCtrl.setRoot(LoginPage);
   // }
 
+  // openMenu(){
+  //   this.menuCtrl.enable(true);
+  //   // this.menuCtrl.open();
+  // }
 }
  

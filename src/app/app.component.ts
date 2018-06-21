@@ -21,30 +21,35 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
   public is_logged : boolean;
 
-
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public afAuth: AngularFireAuth, public menu: MenuController) {
-    this.menu.enable(false); 
-    this.is_logged = false;
+// --------------------------------------------------------------------------------------------
+  constructor(public platform: Platform,
+              public statusBar: StatusBar,
+              public splashScreen: SplashScreen,
+              public afAuth: AngularFireAuth,
+              public menu: MenuController){
+    // this.menu.enable(false); 
+    this.afAuth.auth.signOut();
+    this.is_logged= false;
+    
     
     this.user = afAuth.authState;
       this.afAuth.authState.subscribe(res => {
           if (res && res.uid) {
             this.is_logged = true;                  
-            console.log('user is logged in'+this.is_logged);
+            console.log('user is logged in_'+this.is_logged);
 
           }else{
             this.is_logged = false;
-            console.log('user not logged in'+this.is_logged);
+            console.log('user not logged in_'+this.is_logged);
           }
       });
 
-    // this.initializeApp();
 
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Clients', component: ClientsPage }
     ];
-  }//fin de constructor
+  }//------------------------------------fin de constructor-----------------------------------
 
   // initializeApp() {
   //   this.platform.ready().then(() => {
