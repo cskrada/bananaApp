@@ -1,9 +1,9 @@
 //importacion de librerias
 import { Component } from '@angular/core';
-import { IonicPage, NavController,LoadingController,Loading, AlertController, MenuController } from 'ionic-angular';
+import { IonicPage, NavController,LoadingController,Loading, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
+
 
 //importacion de paginas
 import { HomePage } from '../home/home';
@@ -25,8 +25,7 @@ export class LoginPage {
               public formBuilder:FormBuilder,
               public afAuth: AngularFireAuth,
               public alertCtrl: AlertController,
-              public loadingCtrl: LoadingController,
-              private menu : MenuController){
+              public loadingCtrl: LoadingController){
     
     this.myForm = this.formBuilder.group({
       email: ['', Validators.required],
