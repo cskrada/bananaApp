@@ -12,14 +12,14 @@ items: any;
 
 constructor(public http: Http) {
 
-
 	this.items = [
-	{title: 'one'},
-	{title: 'two'},
-	{title: 'three'},
-	{title: 'four'},
-	{title: 'five'},
-	{title: 'six'}]
+		{title: 'one'},
+		{title: 'two'},
+		{title: 'three'},
+		{title: 'four'},
+		{title: 'five'},
+		{title: 'six'}
+	]
 }
 
 	filterItems(searchTerm){

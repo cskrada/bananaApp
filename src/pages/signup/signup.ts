@@ -30,9 +30,9 @@ constructor(public navCtrl: NavController, public dataService: DataProvider) {
 }
 	// carga la vista con el metodo que esta siendo llamado declarado mas abajo. lo que nos permite especificar el tiempo que queremos esperar antes de activar lo observable
 	ionViewDidLoad() {
-		this.setFilteredItems();
+	this.setFilteredItems();
 		this.searchControl.valueChanges.debounceTime(700).subscribe(search  => {
-			this.setFilteredItems();	
+			this.setFilteredItems();
 		});
 	}
 
