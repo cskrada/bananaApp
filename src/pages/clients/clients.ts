@@ -1,26 +1,27 @@
+//importacion de librerias
 import { Component } from '@angular/core';
-//import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NavController } from 'ionic-angular';
+
+//importacion de paginas
 import { SeeclientPage } from '../seeclient/seeclient';
 import { AddclientPage } from '../addclient/addclient';
-/**
- * Generated class for the ClientsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
-//@IonicPage()
 @Component({
   selector: 'page-clients',
   templateUrl: 'clients.html',
 })
 export class ClientsPage {
+
+	// variable que almacena los valores del arreglo tipo objeto
 	items;
 
   constructor(public navCtrl: NavController) {
+
+  	// inicializa los items
   	this.initializeItems();
   }
+
+  // metodo donde se guardan los datos estaticos 
   initializeItems(){
   	this.items = [
 	    	{
@@ -116,26 +117,30 @@ export class ClientsPage {
 	    	}
     	];
   }
-  	getItems(ev) {
-    	this.initializeItems();
 
-    	var val = ev.target.value;
 
-    	if (val && val.trim() != '') {
-      		this.items = this.items.filter((item) => {
-        	return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      		})
-    	}
+	getItems(ev) {
+		this.initializeItems();
+
+		var val = ev.target.value;
+
+		if (val && val.trim() != '') {
+			this.items = this.items.filter((item) => {
+				return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+				})
+		}
 	}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClientsPage');
   }
 
+// redirecciona la pagina para VerCliente
   seeClient(){
   	this.navCtrl.push(SeeclientPage);
   }
 
+// redirecciona la pagina para AgregarCliente
   addClient(){
   	this.navCtrl.push(AddclientPage);
   }
