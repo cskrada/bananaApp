@@ -1,25 +1,44 @@
+// importaciones de librerias
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FormControl } from '@angular/forms';
+import { NavController } from 'ionic-angular';
+// importacion de Data Provider prueba de busqueda
+import { DataProvider } from '../../providers/data/data';
+import 'rxjs/add/operator/debounceTime';
 
-/**
- * Generated class for the SignupPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
-@IonicPage()
 @Component({
-  selector: 'page-signup',
-  templateUrl: 'signup.html',
+selector: 'page-signup',
+templateUrl: 'signup.html',
 })
 export class SignupPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+	// el usuario podrá controlar, y esto se suministra a la función setFilteredItems que llamará a la función del provider
+	searchTerm: string = '';
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SignupPage');
-  }
+	// variable con instancia de Control
+	searchControl: FormControl;
+
+	// items: se almacena el array
+	items: any;
+
+constructor(public navCtrl: NavController, public dataService: DataProvider) {
+	
+	// Con FormControl, nos podemos suscribir al observable valueChange que emitirá algunos datos cada vez que cambie el valor del campo de entrada
+	this.searchControl = new FormControl();
+
+}
+	// carga la vista con el metodo que esta siendo llamado declarado mas abajo. lo que nos permite especificar el tiempo que queremos esperar antes de activar lo observable
+	ionViewDidLoad() {
+		this.setFilteredItems();
+		this.searchControl.valueChanges.debounceTime(700).subscribe(search  => {
+			this.setFilteredItems();	
+		});
+	}
+
+	// devolverá un array de datos en función de los términos de búsqueda enviados
+	setFilteredItems() {
+		this.items = this.dataService.filterItems(this.searchTerm);
+	}
 
 }
