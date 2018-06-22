@@ -1,17 +1,31 @@
-import { HttpClient } from '@angular/common/http';
+// importaciones de librerias 
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
-/*
-  Generated class for the DataProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
+
 export class DataProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello DataProvider Provider');
-  }
+// variable tipo arreglo de datos estaticos
+items: any;
 
+constructor(public http: Http) {
+
+
+	this.items = [
+	{title: 'one'},
+	{title: 'two'},
+	{title: 'three'},
+	{title: 'four'},
+	{title: 'five'},
+	{title: 'six'}]
+}
+
+	filterItems(searchTerm){
+		return this.items.filter((item) => {
+			return item.title.toLowerCase().indexOf(
+			searchTerm.toLowerCase()) > -1;
+		});
+	}
 }
