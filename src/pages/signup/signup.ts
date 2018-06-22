@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NavController } from 'ionic-angular';
+
 // importacion de Data Provider prueba de busqueda
 import { DataProvider } from '../../providers/data/data';
 import 'rxjs/add/operator/debounceTime';
