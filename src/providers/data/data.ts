@@ -24,10 +24,8 @@ constructor(public http: Http) {
 
 	filterItems(searchTerm){
 		return this.items.filter((item) => {
-			return item.title.toLowerCase().
-			indexOf(searchTerm.toLowerCase()) > -1 ||
-			item.description.toLowerCase().
-			indexOf(searchTerm.toLowerCase()) > -1;
+			return item.title.toLowerCase().indexOf(
+			searchTerm.toLowerCase()) > -1;
 		});
 	}
 }

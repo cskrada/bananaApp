@@ -115,8 +115,10 @@ constructor(public http: Http) {
 
 	filterItems(searchTerm){
 		return this.items.filter((item) => {
-			return item.name.toLowerCase().indexOf(
-			searchTerm.toLowerCase()) > -1;
+			return item.name.toLowerCase().
+			indexOf(searchTerm.toLowerCase()) > -1 ||
+			item.state.toLowerCase().
+			indexOf(searchTerm.toLowerCase()) > -1;
 		});
 	}
 
