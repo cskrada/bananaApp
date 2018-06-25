@@ -32,63 +32,63 @@ export class ClientsPage {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
-	    		name: 'Pepsico, CA',
-	    		address: 'Av ppal las acacias',
+	    		name: 'Cocacola, CA',
+	    		address: 'boleita sur',
 	    		state: 'Dtto. Capital',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
-	    		name: 'Pepsico, CA',
-	    		address: 'Av ppal las acacias',
+	    		name: 'Granolay, CA',
+	    		address: 'Av intercomunal',
 	    		state: 'Dtto. Capital',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
-	    		name: 'Pepsico, CA',
-	    		address: 'Av ppal las acacias',
+	    		name: 'Doritos, CA',
+	    		address: 'caracas san andres',
 	    		state: 'Dtto. Capital',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
-	    		name: 'Pepsico, CA',
-	    		address: 'Av ppal las acacias',
+	    		name: 'canal i',
+	    		address: 'av libertador',
 	    		state: 'Dtto. Capital',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
-	    		name: 'Pepsico, CA',
-	    		address: 'Av ppal las acacias',
+	    		name: 'telesur',
+	    		address: 'boleita norte',
 	    		state: 'Dtto. Capital',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
-	    		name: 'Pepsico, CA',
-	    		address: 'Av ppal las acacias',
+	    		name: 'flips',
+	    		address: 'locatel',
 	    		state: 'Dtto. Capital',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
-	    		name: 'Pepsico, CA',
-	    		address: 'Av ppal las acacias',
+	    		name: 'Farmatodo',
+	    		address: 'farmacia de farma',
 	    		state: 'Dtto. Capital',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
-	    		name: 'Pepsico, CA',
-	    		address: 'Av ppal las acacias',
+	    		name: 'samsung',
+	    		address: 'los dos caminos',
 	    		state: 'Dtto. Capital',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
-	    		name: 'Pepsico, CA',
+	    		name: 'Nokia',
 	    		address: 'Av ppal las acacias',
 	    		state: 'Dtto. Capital',
 	    		phone: '04143198569',
