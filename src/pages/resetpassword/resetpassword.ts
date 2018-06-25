@@ -1,25 +1,41 @@
+// importaciones de librerias
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FormControl } from '@angular/forms';
+import { NavController } from 'ionic-angular';
 
-/**
- * Generated class for the ResetpasswordPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+// importacion de Data Provider prueba de busqueda
+import { ClientsProvider } from '../../providers/data/clients';
+import 'rxjs/add/operator/debounceTime';
 
-@IonicPage()
 @Component({
   selector: 'page-resetpassword',
   templateUrl: 'resetpassword.html',
 })
 export class ResetpasswordPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+	searchTerm: string = '';
+	searchControl: FormControl;
+	items: any;
+	searching: any = false;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ResetpasswordPage');
-  }
+constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
+  	this.searchControl = new FormControl();
+}
+
+	ionViewDidLoad() {
+		this.setFilteredItems();
+		this.searchControl.valueChanges.debounceTime(700).subscribe(search  => {
+			this.searching = false;
+			this.setFilteredItems();
+		});
+	}
+
+	onSearchInput(){
+		this.searching= true;
+	}
+
+	setFilteredItems() {
+		this.items = this.dataService.filterItems(this.searchTerm);
+	}
 
 }
