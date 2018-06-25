@@ -26,6 +26,7 @@ import { ResetpasswordPage } from '../pages/resetpassword/resetpassword';
 
 import { ChartsModule } from 'ng2-charts';
 import { DataProvider } from '../providers/data/data';
+import { ClientsProvider } from '../providers/data/clients';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBpIBL-h59BW8L3zHF22eHcMabZtkh4hMA",
@@ -74,7 +75,8 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataProvider
+    DataProvider,
+    ClientsProvider
   ]
 })
 export class AppModule {}

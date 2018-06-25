@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 
-export class DataProvider {
+export class ClientsProvider {
 
 // variable tipo arreglo de datos estaticos
 items: any;
