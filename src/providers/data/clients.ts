@@ -126,6 +126,7 @@ constructor(public http: Http) {
     	]; // fin de arreglo de objetos
 	} //fin InitialzeItems()
 
+	// tiene doble busqueda
 	filterItems(searchTerm){
 		return this.items.filter((item) => {
 			return item.name.toLowerCase().
@@ -134,6 +135,5 @@ constructor(public http: Http) {
 			indexOf(searchTerm.toLowerCase()) > -1;
 		});
 	}
-
 
 }

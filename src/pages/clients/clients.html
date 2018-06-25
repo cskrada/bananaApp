@@ -43,7 +43,10 @@
           </ion-buttons>
 			</ion-col>
 			<ion-col col-10>
-				<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+				<ion-searchbar [(ngModel)]="searchTerm"  [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
+        <div *ngIf="searching" class="spinner-container">
+         <ion-spinner></ion-spinner>
+         </div>
 			</ion-col>
 		</ion-row>
     <!-- FIN de barra de busqueda y de agregar un nuevo cliente -->
