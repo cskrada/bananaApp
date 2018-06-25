@@ -20,6 +20,7 @@ constructor(public http: Http) {
 	initializeItems(){
 		this.items = [
 	    	{
+	    		id: '01',
 	    		name: 'Pepsico, CA',
 	    		address: 'Av ppal las acacias',
 	    		state: 'Dtto. Capital',
@@ -27,6 +28,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
+	    		id: '02',
 	    		name: 'Cocacola, CA',
 	    		address: 'boleita sur',
 	    		state: 'Dtto. Capital',
@@ -34,6 +36,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
+	    		id: '03',
 	    		name: 'Granolay, CA',
 	    		address: 'Av intercomunal',
 	    		state: 'Dtto. Capital',
@@ -41,6 +44,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
+	    		id: '04',
 	    		name: 'Doritos, CA',
 	    		address: 'caracas san andres',
 	    		state: 'Dtto. Capital',
@@ -48,6 +52,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
+	    		id: '05',
 	    		name: 'canal i',
 	    		address: 'av libertador',
 	    		state: 'Tachira',
@@ -55,6 +60,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
+	    		id: '06',
 	    		name: 'telesur',
 	    		address: 'boleita norte',
 	    		state: 'Trujillo',
@@ -62,6 +68,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
+	    		id: '07',
 	    		name: 'flips',
 	    		address: 'locatel',
 	    		state: 'Amazonas',
@@ -69,6 +76,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
+	    		id: '08',
 	    		name: 'Farmatodo',
 	    		address: 'farmacia de farma',
 	    		state: 'Apure',
@@ -76,6 +84,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
+	    		id: '09',
 	    		name: 'samsung',
 	    		address: 'los dos caminos',
 	    		state: 'Merida',
@@ -83,6 +92,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
+	    		id: '10',
 	    		name: 'Nokia',
 	    		address: 'Av ppal las acacias',
 	    		state: 'Falcon',
@@ -90,6 +100,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
+	    		id: '11',
 	    		name: 'Pepsico, CA',
 	    		address: 'Av ppal las acacias',
 	    		state: 'Aragua',
@@ -97,6 +108,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
+	    		id: '12',
 	    		name: 'Pepsico, CA',
 	    		address: 'Av ppal las acacias',
 	    		state: 'Zulia',
@@ -104,6 +116,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
+	    		id: '13',
 	    		name: 'Papajhons',
 	    		address: 'distrito capital',
 	    		state: 'Miranda',
