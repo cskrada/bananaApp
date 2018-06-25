@@ -50,63 +50,63 @@ constructor(public http: Http) {
 	    	{
 	    		name: 'canal i',
 	    		address: 'av libertador',
-	    		state: 'Dtto. Capital',
+	    		state: 'Tachira',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
 	    		name: 'telesur',
 	    		address: 'boleita norte',
-	    		state: 'Dtto. Capital',
+	    		state: 'Trujillo',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
 	    		name: 'flips',
 	    		address: 'locatel',
-	    		state: 'Dtto. Capital',
+	    		state: 'Amazonas',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
 	    		name: 'Farmatodo',
 	    		address: 'farmacia de farma',
-	    		state: 'Dtto. Capital',
+	    		state: 'Apure',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
 	    		name: 'samsung',
 	    		address: 'los dos caminos',
-	    		state: 'Dtto. Capital',
+	    		state: 'Merida',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
 	    		name: 'Nokia',
 	    		address: 'Av ppal las acacias',
-	    		state: 'Dtto. Capital',
+	    		state: 'Falcon',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
 	    		name: 'Pepsico, CA',
 	    		address: 'Av ppal las acacias',
-	    		state: 'Dtto. Capital',
+	    		state: 'Aragua',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
 	    		name: 'Pepsico, CA',
 	    		address: 'Av ppal las acacias',
-	    		state: 'Dtto. Capital',
+	    		state: 'Zulia',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
-	    		name: 'Pepsico, CA',
-	    		address: 'Av ppal las acacias',
-	    		state: 'Dtto. Capital',
+	    		name: 'Papajhons',
+	    		address: 'distrito capital',
+	    		state: 'Miranda',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	}
