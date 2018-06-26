@@ -37,8 +37,8 @@ constructor(public http: Http) {
 	    	},
 	    	{
 	    		id: '03',
-	    		name: 'Granolay, CA',
-	    		address: 'Av intercomunal',
+	    		name: 'Caracas',
+	    		address: 'Caracas',
 	    		state: 'Dtto. Capital',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
@@ -134,6 +134,8 @@ constructor(public http: Http) {
 			item.state.toLowerCase().
 			indexOf(searchTerm.toLowerCase()) > -1;
 		});
+	
+
 	}
 
 }
