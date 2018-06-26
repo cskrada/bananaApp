@@ -135,7 +135,6 @@ constructor(public http: Http) {
 			indexOf(searchTerm.toLowerCase()) > -1;
 		});
 	
-
 	}
 
 }
