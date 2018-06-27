@@ -129,10 +129,10 @@ constructor(public http: Http) {
 	// tiene doble busqueda
 	filterItems(searchTerm){
 		return this.items.filter((item) => {
-			return item.name.toLowerCase().
-			includes(searchTerm.toLowerCase()) ||
-			item.state.toLowerCase().
-			includes(searchTerm.toLowerCase());
+			return item.name.toLowerCase()
+			.includes(searchTerm.toLowerCase()) || 
+			item.state.toLowerCase()
+			.includes(searchTerm.toLowerCase());
 		});
 	}
 
