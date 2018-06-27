@@ -24,7 +24,7 @@ constructor(public navCtrl: NavController, public dataService: ClientsProvider) 
 
 	ionViewDidLoad() {
 		this.setFilteredItems();
-		this.searchControl.valueChanges.debounceTime(700).subscribe(search  => {
+		this.searchControl.valueChanges.debounceTime(700).subscribe(search => {
 			this.searching = false;
 			this.setFilteredItems();
 		});

@@ -126,20 +126,14 @@ constructor(public http: Http) {
     	]; // fin de arreglo de objetos
 	} //fin InitialzeItems()
 
-	// tiene triple busqueda
+	// tiene doble busqueda
 	filterItems(searchTerm){
-
 		return this.items.filter((item) => {
 			return item.name.toLowerCase().
-			indexOf(searchTerm.toLowerCase()) > -1 ||
+			includes(searchTerm.toLowerCase()) ||
 			item.state.toLowerCase().
-			indexOf(searchTerm.toLowerCase()) > -1 || 
-			item.address.toLowerCase().
-			indexOf(searchTerm.toLowerCase()) > -1;
+			includes(searchTerm.toLowerCase());
 		});
-
-
-
 	}
 
 }
