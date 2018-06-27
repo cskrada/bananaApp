@@ -39,7 +39,7 @@ constructor(public http: Http) {
 	    		id: '03',
 	    		name: 'Caracas',
 	    		address: 'Caracas',
-	    		state: 'Dtto. Capital',
+	    		state: 'pepsico',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
@@ -126,15 +126,20 @@ constructor(public http: Http) {
     	]; // fin de arreglo de objetos
 	} //fin InitialzeItems()
 
-	// tiene doble busqueda
+	// tiene triple busqueda
 	filterItems(searchTerm){
+
 		return this.items.filter((item) => {
 			return item.name.toLowerCase().
 			indexOf(searchTerm.toLowerCase()) > -1 ||
 			item.state.toLowerCase().
+			indexOf(searchTerm.toLowerCase()) > -1 || 
+			item.address.toLowerCase().
 			indexOf(searchTerm.toLowerCase()) > -1;
 		});
-	
+
+
+
 	}
 
 }
