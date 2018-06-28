@@ -21,7 +21,9 @@ constructor(public http: Http) {
 		this.items = [
 	    	{
 	    		id: '01',
-	    		name: 'Pepsico, CA',
+	    		name: 'pepsico, CA',
+	    		razons: 'comerciales aurora',
+	    		alias: 'pepsicola',
 	    		address: 'Av ppal las acacias',
 	    		state: 'Dtto. Capital',
 	    		phone: '04143198569',
@@ -29,7 +31,9 @@ constructor(public http: Http) {
 	    	},
 	    	{
 	    		id: '02',
-	    		name: 'Cocacola, CA',
+	    		name: 'cocacola, CA',
+	    		razons: 'distribuidora gaseosa',
+	    		alias: 'cocacola',
 	    		address: 'boleita sur',
 	    		state: 'Dtto. Capital',
 	    		phone: '04143198569',
@@ -37,7 +41,9 @@ constructor(public http: Http) {
 	    	},
 	    	{
 	    		id: '03',
-	    		name: 'Caracas',
+	    		name: 'seguros caracas',
+	    		razons: 'seguro caracas oficial',
+	    		alias: 'poliza de seguro',
 	    		address: 'Caracas',
 	    		state: 'pepsico',
 	    		phone: '04143198569',
@@ -45,7 +51,9 @@ constructor(public http: Http) {
 	    	},
 	    	{
 	    		id: '04',
-	    		name: 'Doritos, CA',
+	    		name: 'frito lay',
+	    		razons: 'tu dorito',
+	    		alias: 'pepitos',
 	    		address: 'caracas san andres',
 	    		state: 'Dtto. Capital',
 	    		phone: '04143198569',
@@ -54,6 +62,8 @@ constructor(public http: Http) {
 	    	{
 	    		id: '05',
 	    		name: 'canal i',
+	    		razons: 'intendencia',
+	    		alias: 'canal i',
 	    		address: 'av libertador',
 	    		state: 'Tachira',
 	    		phone: '04143198569',
@@ -61,7 +71,9 @@ constructor(public http: Http) {
 	    	},
 	    	{
 	    		id: '06',
-	    		name: 'telesur',
+	    		name: 'tves',
+	    		razons: 'canal expropiado',
+	    		alias: 'rctv',
 	    		address: 'boleita norte',
 	    		state: 'Trujillo',
 	    		phone: '04143198569',
@@ -69,7 +81,9 @@ constructor(public http: Http) {
 	    	},
 	    	{
 	    		id: '07',
-	    		name: 'flips',
+	    		name: 'alfonzo rivas',
+	    		razons: 'flips',
+	    		alias: 'flips',
 	    		address: 'locatel',
 	    		state: 'Amazonas',
 	    		phone: '04143198569',
@@ -77,7 +91,9 @@ constructor(public http: Http) {
 	    	},
 	    	{
 	    		id: '08',
-	    		name: 'Farmatodo',
+	    		name: 'farmatodo',
+	    		razons: 'farmacia la delicia',
+	    		alias: 'farmatodo',
 	    		address: 'farmacia de farma',
 	    		state: 'Apure',
 	    		phone: '04143198569',
@@ -86,6 +102,8 @@ constructor(public http: Http) {
 	    	{
 	    		id: '09',
 	    		name: 'samsung',
+	    		razons: 'fabrica de ensamble',
+	    		alias: 'samsung',
 	    		address: 'los dos caminos',
 	    		state: 'Merida',
 	    		phone: '04143198569',
@@ -93,7 +111,9 @@ constructor(public http: Http) {
 	    	},
 	    	{
 	    		id: '10',
-	    		name: 'Nokia',
+	    		name: 'nokia',
+	    		razons: 'fabrica de ensamble',
+	    		alias: 'nokia',
 	    		address: 'Av ppal las acacias',
 	    		state: 'Falcon',
 	    		phone: '04143198569',
@@ -101,7 +121,9 @@ constructor(public http: Http) {
 	    	},
 	    	{
 	    		id: '11',
-	    		name: 'Pepsico, CA',
+	    		name: 'locatel',
+	    		razons: 'farmacia fantasia',
+	    		alias: 'locatel',
 	    		address: 'Av ppal las acacias',
 	    		state: 'Aragua',
 	    		phone: '04143198569',
@@ -109,7 +131,9 @@ constructor(public http: Http) {
 	    	},
 	    	{
 	    		id: '12',
-	    		name: 'Pepsico, CA',
+	    		name: 'mng',
+	    		razons: 'tu tiendita bella',
+	    		alias: 'frufru',
 	    		address: 'Av ppal las acacias',
 	    		state: 'Zulia',
 	    		phone: '04143198569',
@@ -117,7 +141,60 @@ constructor(public http: Http) {
 	    	},
 	    	{
 	    		id: '13',
-	    		name: 'Papajhons',
+	    		name: 'papajhons',
+	    		razons: 'pizzeria la nona',
+	    		alias: 'papa jhons',
+	    		address: 'distrito capital',
+	    		state: 'Miranda',
+	    		phone: '04143198569',
+	    		email: 'csak@gmail.com'
+	    	},
+	    	{
+	    		id: '14',
+	    		name: 'locatel',
+	    		razons: 'farmacia beauty',
+	    		alias: 'locatel',
+	    		address: 'distrito capital',
+	    		state: 'Miranda',
+	    		phone: '04143198569',
+	    		email: 'csak@gmail.com'
+	    	},
+	    	{
+	    		id: '14',
+	    		name: 'locatel',
+	    		razons: 'farmacia boleita',
+	    		alias: 'locatel',
+	    		address: 'distrito capital',
+	    		state: 'Miranda',
+	    		phone: '04143198569',
+	    		email: 'csak@gmail.com'
+	    	},
+	    	{
+	    		id: '14',
+	    		name: 'locatel',
+	    		razons: 'farmacia san luis',
+	    		alias: 'locatel',
+	    		address: 'distrito capital',
+	    		state: 'Miranda',
+	    		phone: '04143198569',
+	    		email: 'csak@gmail.com'
+	    	},
+	    	{
+	    		id: '14',
+	    		name: 'locatel',
+	    		razons: 'farmacia caracas grande',
+	    		alias: 'locatel',
+	    		address: 'distrito capital',
+	    		state: 'Miranda',
+	    		phone: '04143198569',
+	    		email: 'csak@gmail.com'
+	    	}
+	    	,
+	    	{
+	    		id: '14',
+	    		name: 'locatel',
+	    		razons: 'farmacia San luisito',
+	    		alias: 'locatel',
 	    		address: 'distrito capital',
 	    		state: 'Miranda',
 	    		phone: '04143198569',
@@ -126,14 +203,30 @@ constructor(public http: Http) {
     	]; // fin de arreglo de objetos
 	} //fin InitialzeItems()
 
-	// tiene doble busqueda
+
 	filterItems(searchTerm){
 		return this.items.filter((item) => {
 			return item.name.toLowerCase()
 			.includes(searchTerm.toLowerCase()) || 
-			item.state.toLowerCase()
+			item.razons.toLowerCase()
+			.includes(searchTerm.toLowerCase()) ||
+			item.alias.toLowerCase()
 			.includes(searchTerm.toLowerCase());
 		});
 	}
 
+	orderList(items){
+		this.filterItems;
+
+		this.items.sort(function ( a , b ) {
+			if (a.name > b.name) {
+				return 1;
+			}
+			if (a.name < b.name) {
+				return -1;
+			}
+			// a must be equal to b
+			return 0;
+			});
+	}
 }

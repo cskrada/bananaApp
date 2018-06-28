@@ -23,8 +23,9 @@ constructor(public navCtrl: NavController, public dataService: ClientsProvider) 
 }
 
 	ionViewDidLoad() {
+		this.items = this.dataService.orderList(this.items);
 		this.setFilteredItems();
-		this.searchControl.valueChanges.debounceTime(700).subscribe(search => {
+		this.searchControl.valueChanges.debounceTime(1000).subscribe(search => {
 			this.searching = false;
 			this.setFilteredItems();
 		});
@@ -36,9 +37,10 @@ constructor(public navCtrl: NavController, public dataService: ClientsProvider) 
 
 	setFilteredItems() {
 		this.items = this.dataService.filterItems(this.searchTerm);
+
 		
 		// prueba
-		console.log(this.searchTerm+' '+this.searchTerm.length);
+		// console.log(this.searchTerm+' '+this.searchTerm.length);
 	}
 
 }
