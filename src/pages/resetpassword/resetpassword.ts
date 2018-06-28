@@ -36,6 +36,8 @@ constructor(public navCtrl: NavController, public dataService: ClientsProvider) 
 
 	setFilteredItems() {
 		this.items = this.dataService.filterItems(this.searchTerm);
+		
+		// prueba
 		console.log(this.searchTerm+' '+this.searchTerm.length);
 	}
 
