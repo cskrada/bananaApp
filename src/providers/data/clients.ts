@@ -71,9 +71,9 @@ constructor(public http: Http) {
 	    	},
 	    	{
 	    		id: '06',
-	    		name: 'tves',
-	    		razons: 'canal expropiado',
-	    		alias: 'rctv',
+	    		name: 'pepito',
+	    		razons: 'frito lay',
+	    		alias: 'pepito',
 	    		address: 'boleita norte',
 	    		state: 'Trujillo',
 	    		phone: '04143198569',
@@ -227,6 +227,11 @@ constructor(public http: Http) {
 			}
 			// a must be equal to b
 			return 0;
-			});
+		});
+	}
+
+	subtext(searchTerm){
+
+
 	}
 }

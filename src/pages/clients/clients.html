@@ -44,11 +44,15 @@
 			</ion-col>
 			<ion-col col-10>
 				<ion-searchbar [(ngModel)]="searchTerm"  [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
+			</ion-col>
+		</ion-row>
+    <ion-row>
+      <ion-col col-12>
         <div *ngIf="searching" class="spinner-container">
          <ion-spinner></ion-spinner>
          </div>
-			</ion-col>
-		</ion-row>
+      </ion-col>
+    </ion-row>
     <!-- FIN de barra de busqueda y de agregar un nuevo cliente -->
 	</ion-grid>
   	  	<!-- lista dinamica  -->
