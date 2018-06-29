@@ -45,7 +45,7 @@ constructor(public http: Http) {
 	    		razons: 'seguro caracas oficial',
 	    		alias: 'poliza de seguro',
 	    		address: 'Caracas',
-	    		state: 'pepsico',
+	    		state: 'Amazonas',
 	    		phone: '04143198569',
 	    		email: 'csak@gmail.com'
 	    	},
@@ -160,7 +160,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
-	    		id: '14',
+	    		id: '15',
 	    		name: 'locatel',
 	    		razons: 'farmacia boleita',
 	    		alias: 'locatel',
@@ -170,7 +170,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
-	    		id: '14',
+	    		id: '16',
 	    		name: 'locatel',
 	    		razons: 'farmacia san luis',
 	    		alias: 'locatel',
@@ -180,7 +180,7 @@ constructor(public http: Http) {
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
-	    		id: '14',
+	    		id: '17',
 	    		name: 'locatel',
 	    		razons: 'farmacia caracas grande',
 	    		alias: 'locatel',
@@ -191,7 +191,7 @@ constructor(public http: Http) {
 	    	}
 	    	,
 	    	{
-	    		id: '14',
+	    		id: '18',
 	    		name: 'locatel',
 	    		razons: 'farmacia San luisito',
 	    		alias: 'locatel',

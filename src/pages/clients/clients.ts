@@ -26,128 +26,13 @@ export class ClientsPage {
 	searching: any = false;
 
   constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
-
-  	// inicializa los items
-  	// this.initializeItems();
   	this.searchControl = new FormControl();
   }
 
-  // metodo donde se guardan los datos estaticos 
-  // initializeItems(){
-  // 	this.items = [
-	 //    	{
-	 //    		name: 'Pepsico, CA',
-	 //    		address: 'Av ppal las acacias',
-	 //    		state: 'Dtto. Capital',
-	 //    		phone: '04143198569',
-	 //    		email: 'csak@gmail.com'
-	 //    	},
-	 //    	{
-	 //    		name: 'Cocacola, CA',
-	 //    		address: 'boleita sur',
-	 //    		state: 'Dtto. Capital',
-	 //    		phone: '04143198569',
-	 //    		email: 'csak@gmail.com'
-	 //    	},
-	 //    	{
-	 //    		name: 'Granolay, CA',
-	 //    		address: 'Av intercomunal',
-	 //    		state: 'Dtto. Capital',
-	 //    		phone: '04143198569',
-	 //    		email: 'csak@gmail.com'
-	 //    	},
-	 //    	{
-	 //    		name: 'Doritos, CA',
-	 //    		address: 'caracas san andres',
-	 //    		state: 'Dtto. Capital',
-	 //    		phone: '04143198569',
-	 //    		email: 'csak@gmail.com'
-	 //    	},
-	 //    	{
-	 //    		name: 'canal i',
-	 //    		address: 'av libertador',
-	 //    		state: 'Dtto. Capital',
-	 //    		phone: '04143198569',
-	 //    		email: 'csak@gmail.com'
-	 //    	},
-	 //    	{
-	 //    		name: 'telesur',
-	 //    		address: 'boleita norte',
-	 //    		state: 'Dtto. Capital',
-	 //    		phone: '04143198569',
-	 //    		email: 'csak@gmail.com'
-	 //    	},
-	 //    	{
-	 //    		name: 'flips',
-	 //    		address: 'locatel',
-	 //    		state: 'Dtto. Capital',
-	 //    		phone: '04143198569',
-	 //    		email: 'csak@gmail.com'
-	 //    	},
-	 //    	{
-	 //    		name: 'Farmatodo',
-	 //    		address: 'farmacia de farma',
-	 //    		state: 'Dtto. Capital',
-	 //    		phone: '04143198569',
-	 //    		email: 'csak@gmail.com'
-	 //    	},
-	 //    	{
-	 //    		name: 'samsung',
-	 //    		address: 'los dos caminos',
-	 //    		state: 'Dtto. Capital',
-	 //    		phone: '04143198569',
-	 //    		email: 'csak@gmail.com'
-	 //    	},
-	 //    	{
-	 //    		name: 'Nokia',
-	 //    		address: 'Av ppal las acacias',
-	 //    		state: 'Dtto. Capital',
-	 //    		phone: '04143198569',
-	 //    		email: 'csak@gmail.com'
-	 //    	},
-	 //    	{
-	 //    		name: 'Pepsico, CA',
-	 //    		address: 'Av ppal las acacias',
-	 //    		state: 'Dtto. Capital',
-	 //    		phone: '04143198569',
-	 //    		email: 'csak@gmail.com'
-	 //    	},
-	 //    	{
-	 //    		name: 'Pepsico, CA',
-	 //    		address: 'Av ppal las acacias',
-	 //    		state: 'Dtto. Capital',
-	 //    		phone: '04143198569',
-	 //    		email: 'csak@gmail.com'
-	 //    	},
-	 //    	{
-	 //    		name: 'Pepsico, CA',
-	 //    		address: 'Av ppal las acacias',
-	 //    		state: 'Dtto. Capital',
-	 //    		phone: '04143198569',
-	 //    		email: 'csak@gmail.com'
-	 //    	}
-  //   	];
-  // }
-
-	// getItems(ev) {
-	// 	this.initializeItems();
-
-	// 	var val = ev.target.value;
-
-	// 	if (val && val.trim() != '') {
-	// 		this.items = this.items.filter((item) => {
-	// 			return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-	// 			})
-	// 	}
-	// }
-
- //  ionViewDidLoad() {
- //    console.log('ionViewDidLoad ClientsPage');
- //  }
-
+  
 // redirecciona la pagina para VerCliente
-  seeClient(){
-  	this.navCtrl.push(SeeclientPage);
+  seeClient(id){
+  	this.navCtrl.push(SeeclientPage, this.items);
   }
 
 // redirecciona la pagina para AgregarCliente
@@ -156,6 +41,7 @@ export class ClientsPage {
   }
 
   	ionViewDidLoad() {
+  		this.items = this.dataService.orderList(this.items);
 		this.setFilteredItems();
 		this.searchControl.valueChanges.debounceTime(700).subscribe(search  => {
 			this.searching = false;

@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, AlertController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the SeeclientPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+// importacion de DataProvider
+import { ClientsProvider } from '../../providers/data/clients';
 
 @IonicPage()
 @Component({
@@ -15,7 +11,10 @@ import { IonicPage, NavController, AlertController } from 'ionic-angular';
 })
 export class SeeclientPage {
 
-  constructor(public navCtrl: NavController, public alerta: AlertController) {
+  items: any;
+
+  constructor(public navCtrl: NavController, public alerta: AlertController, public navParams: NavParams, public dataService: ClientsProvider) {
+    this.items = this.dataService;
   }
 
   ionViewDidLoad() {
@@ -64,5 +63,6 @@ export class SeeclientPage {
   	});
   	alert2.present();
   }
+
 
 }
