@@ -1,7 +1,6 @@
 // importacion de librerias
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { AngularFireAuth } from 'angularfire2/auth';
 
 // importacion de paginas
 import { ClientsPage } from '../clients/clients';
@@ -81,7 +80,7 @@ export class HomePage {
 
 
 // CONSTRUCTOR ----------------------------------------------------------------------------------------
-  constructor(public navCtrl: NavController, public afAuth : AngularFireAuth) {
+  constructor(public navCtrl: NavController) {
 
   }
 
