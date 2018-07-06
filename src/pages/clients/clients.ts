@@ -24,29 +24,31 @@ export class ClientsPage {
 	searchControl: FormControl;
 	items: any;
 	searching: any = false;
+	datos: any;
 
   constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
   	this.searchControl = new FormControl();
+  	this.datos = this.dataService.items;
+  	
   }
 
-  
-// redirecciona la pagina para VerCliente
-  seeClient(id){
-  	this.navCtrl.push(SeeclientPage, this.items);
-  }
+	openPage(item) {
+		this.navCtrl.push(SeeclientPage, item);
+		// console.log(item);
+	}
 
-// redirecciona la pagina para AgregarCliente
-  addClient(){
-  	this.navCtrl.push(AddclientPage);
-  }
+	// redirecciona la pagina para AgregarCliente
+	addClient(){
+		this.navCtrl.push(AddclientPage);
+	}
 
-  	ionViewDidLoad() {
-  		this.items = this.dataService.orderList(this.items);
+	ionViewDidLoad() {
+		this.items = this.dataService.orderList(this.items);
 		this.setFilteredItems();
-		this.searchControl.valueChanges.debounceTime(700).subscribe(search  => {
+			this.searchControl.valueChanges.debounceTime(700).subscribe(search  => {
 			this.searching = false;
 			this.setFilteredItems();
-		});
+			});
 	}
 
 	onSearchInput(){

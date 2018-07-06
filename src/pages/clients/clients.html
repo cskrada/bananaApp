@@ -57,12 +57,13 @@
 	</ion-grid>
   	  	<!-- lista dinamica  -->
 	<ion-list>
-    <button ion-item *ngFor="let item of items" class="paddinglr fuente" (click)="seeClient(id)">
-      <b>{{ item.name }}</b><br>
+    <button ion-item *ngFor="let item of items" class="paddinglr fuente" (click)="openPage(item)">
+      <b>{{ item.name }} ({{ item.alias }})</b><br>
         <span>
-          {{ item.address }}
+          <!-- {{ item.address }} -->
+          {{ item.razons }} <br>
           {{ item.state }} <br>
-          {{ item.phone }} &nbsp;
+          {{ item.phone }} &nbsp;|
           {{ item.email }}
         </span>
     </button>

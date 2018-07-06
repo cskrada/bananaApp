@@ -63,32 +63,37 @@
 	<ion-grid no-padding>
 		<ion-row>
 			<ion-col col-12 text-left>
-				<h2>Pepsico, C.A. | {{ items.name }}</h2>
+				<h2>{{ items.name }}</h2>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col col-12 text-left>
-				<span>Alias o Nombre Comercial</span>
+				<span>Razón Social: {{ items.razons }}</span>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col col-12 text-left>
-				<span>Rif: J-145236897</span>
+				<span>Alias: {{ items.alias }}</span>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col col-12 text-left>
-				<span>Av. transversal de Francisco Miranda en la calle baruta de esquina el tepuy, edif 11</span>
+				<span>Rif: {{ items.rif }}</span>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col col-12 text-left>
-				<span>Boleita Norte, Caracas 1017 , Miranda</span>
+				<span>Dirección: {{ items.address }}. {{ items.region }} </span>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col col-12 text-left>
-				<span>Venezuela</span>
+				<span>{{ items.city }}, {{ items.postalcode }}</span>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-12 text-left>
+				<span> {{ items.state }}, Venezuela</span>
 			</ion-col>
 		</ion-row>
 		<ion-row>
@@ -96,15 +101,7 @@
 				<ion-icon name="phone-portrait"></ion-icon>
 			</ion-col>
 			<ion-col col-11 text-left>
-				<span class="links"><u>+584125638989</u></span>
-			</ion-col>
-		</ion-row>
-		<ion-row>
-			<ion-col col-1 text-center>
-				<ion-icon name="phone-portrait"></ion-icon>
-			</ion-col>
-			<ion-col col-11 text-left>
-				<span class="links"><u>+584121111111</u></span>
+				<span class="links"><u>{{ items.phone }}</u></span>
 			</ion-col>
 		</ion-row>
 		<ion-row>
@@ -112,7 +109,7 @@
 				<ion-icon name="mail"></ion-icon>
 			</ion-col>
 			<ion-col col-11 text-left>
-				<span class="links"><u>info@info.com.ve</u></span>
+				<span class="links"><u>{{ items.email }}</u></span>
 			</ion-col>
 		</ion-row>
 		<ion-row>
