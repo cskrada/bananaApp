@@ -25,15 +25,16 @@ export class ClientsPage {
 	items: any;
 	searching: any = false;
 	datos: any;
-	alias: boolean;
+	
+  
 
   constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
   	this.searchControl = new FormControl();
   	this.datos = this.dataService.items;
 
-  	console.log(this.datos);
+  	// console.log(this.datos);
   	
-  }
+  }// fin de constructor
 
 	openPage(item) {
 		this.navCtrl.push(SeeclientPage, item);
@@ -46,6 +47,7 @@ export class ClientsPage {
 	}
 
 	ionViewDidLoad() {
+
 		this.items = this.dataService.orderList(this.items);
 		this.setFilteredItems();
 			this.searchControl.valueChanges.debounceTime(700).subscribe(search  => {

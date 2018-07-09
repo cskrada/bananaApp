@@ -9,10 +9,12 @@ export class ClientsProvider {
 
 // variable tipo arreglo de datos estaticos
 items: any;
+public aliasif: boolean;
 
 constructor(public http: Http) {
 
 	this.initializeItems();
+	this.aliasif= false;
 
 
 } // fin del constructor
@@ -291,15 +293,24 @@ constructor(public http: Http) {
 		this.filterItems;
 
 		this.items.sort(function ( a , b ) {
-			if (a.name > b.name) {
+			if (a.razons > b.razons) {
 				return 1;
 			}
-			if (a.name < b.name) {
+			if (a.razons < b.razons) {
 				return -1;
 			}
 			// a must be equal to b
 			return 0;
 		});
+	}
+
+	aliasIf(){
+
+		if ( this.items.name != this.items.alias ){
+			this.aliasif = true;
+		}else{
+			this.aliasif = false;
+		}
 	}
 
 

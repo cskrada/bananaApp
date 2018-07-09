@@ -58,14 +58,14 @@
   	  	<!-- lista dinamica  -->
 	<ion-list>
     <button ion-item *ngFor="let item of items" class="paddinglr fuente" (click)="openPage(item)">
-      <b>{{ item.razons }} ({{ item.alias }})</b><br>
+      <b>{{ item.razons }}
+      <span *ngIf="item.name != item.alias">({{ item.alias }})</span>
+      </b><br>
         <span>
-          <!-- {{ item.address }} -->
           {{ item.name }} <br>
           {{ item.rif }} <br>
           {{ item.city }}, {{ item.state }} <br>
-          {{ item.phone }} &nbsp;|
-          {{ item.email }}
+          {{ item.phone }} &nbsp;| {{ item.email }}
         </span>
     </button>
 	</ion-list>
