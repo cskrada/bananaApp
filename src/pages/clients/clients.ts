@@ -30,6 +30,8 @@ export class ClientsPage {
   constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
   	this.searchControl = new FormControl();
   	this.datos = this.dataService.items;
+
+  	console.log(this.datos);
   	
   }
 
@@ -58,11 +60,6 @@ export class ClientsPage {
 
 	setFilteredItems() {
 		this.items = this.dataService.filterItems(this.searchTerm);
-	}
-
-	aliasIf(){
-		console.log(this.datos.name);
-
 	}
 
 
