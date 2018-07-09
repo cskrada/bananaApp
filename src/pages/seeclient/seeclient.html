@@ -101,7 +101,9 @@
 				<ion-icon name="phone-portrait"></ion-icon>
 			</ion-col>
 			<ion-col col-11 text-left>
-				<span class="links"><u>{{ items.phone }}</u></span>
+				<span class="links"><u>
+					<a href="https://api.whatsapp.com/send?phone={{ items.phone }}">{{ items.phone }}</a>
+				</u></span>
 			</ion-col>
 		</ion-row>
 		<ion-row>

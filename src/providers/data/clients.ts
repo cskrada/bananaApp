@@ -30,7 +30,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Caracas',
 	    		state: 'Dtto. Capital',
-	    		phone: '02124569878',
+	    		phone: '584569878',
 	    		email: 'pepsico@gmail.com'
 	    	},
 	    	{
@@ -44,7 +44,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Caracas',
 	    		state: 'Dtto. Capital',
-	    		phone: '04124568989',
+	    		phone: '584124568989',
 	    		email: 'cocacola@gmail.com'
 	    	},
 	    	{
@@ -58,7 +58,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Puerto Ayacucho',
 	    		state: 'Amazonas',
-	    		phone: '04143198569',
+	    		phone: '584143198569',
 	    		email: 'seguros-online@gmail.com'
 	    	},
 	    	{
@@ -72,7 +72,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Caracas',
 	    		state: 'Dtto. Capital',
-	    		phone: '04145235566',
+	    		phone: '584145235566',
 	    		email: 'papalays@gmail.com'
 	    	},
 	    	{
@@ -86,7 +86,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'San Cristobal',
 	    		state: 'Tachira',
-	    		phone: '04144562233',
+	    		phone: '584144562233',
 	    		email: 'canal-i-so@gmail.com'
 	    	},
 	    	{
@@ -100,7 +100,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Trujillo',
 	    		state: 'Trujillo',
-	    		phone: '04141234455',
+	    		phone: '584141234455',
 	    		email: 'pepito-@gmail.com'
 	    	},
 	    	{
@@ -114,7 +114,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Puerto Ayacucho',
 	    		state: 'Amazonas',
-	    		phone: '04141126369',
+	    		phone: '584141126369',
 	    		email: 'alfonsito@gmail.com'
 	    	},
 	    	{
@@ -128,7 +128,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'San Fernando de Apure',
 	    		state: 'Apure',
-	    		phone: '02125896969',
+	    		phone: '584145896969',
 	    		email: 'farmatodo-compras@gmail.com'
 	    	},
 	    	{
@@ -142,7 +142,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Mérida',
 	    		state: 'Merida',
-	    		phone: '04125551212',
+	    		phone: '584125551212',
 	    		email: 'samsung-compras@gmail.com'
 	    	},
 	    	{
@@ -156,7 +156,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Coro',
 	    		state: 'Falcon',
-	    		phone: '04143198569',
+	    		phone: '584143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
@@ -170,7 +170,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Maracay',
 	    		state: 'Aragua',
-	    		phone: '04143198569',
+	    		phone: '584143198569',
 	    		email: 'locatel-f@gmail.com'
 	    	},
 	    	{
@@ -184,7 +184,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Maracaibo',
 	    		state: 'Zulia',
-	    		phone: '04143198569',
+	    		phone: '584143198569',
 	    		email: 'mng-info@gmail.com'
 	    	},
 	    	{
@@ -198,7 +198,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Los teques',
 	    		state: 'Miranda',
-	    		phone: '04143198569',
+	    		phone: '584143198569',
 	    		email: 'papajhons@gmail.com'
 	    	},
 	    	{
@@ -212,7 +212,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Los Teques',
 	    		state: 'Miranda',
-	    		phone: '04143198569',
+	    		phone: '584143198569',
 	    		email: 'locatel-b@gmail.com'
 	    	},
 	    	{
@@ -226,7 +226,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Los Teques',
 	    		state: 'Miranda',
-	    		phone: '04143198569',
+	    		phone: '584143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
@@ -240,7 +240,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Los Teques',
 	    		state: 'Miranda',
-	    		phone: '04143198569',
+	    		phone: '584143198569',
 	    		email: 'csak@gmail.com'
 	    	},
 	    	{
@@ -254,7 +254,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Los Teques',
 	    		state: 'Miranda',
-	    		phone: '04143198569',
+	    		phone: '584143198569',
 	    		email: 'csak@gmail.com'
 	    	}
 	    	,
@@ -269,7 +269,7 @@ constructor(public http: Http) {
 	    		postalcode: '1021',
 	    		city: 'Los Teques',
 	    		state: 'Miranda',
-	    		phone: '04143198569',
+	    		phone: '584143198569',
 	    		email: 'locatel-compras@gmail.com'
 	    	}
     	]; // fin de arreglo de objetos
@@ -302,8 +302,5 @@ constructor(public http: Http) {
 		});
 	}
 
-	subtext(searchTerm){
 
-
-	}
 }

@@ -25,6 +25,7 @@ export class ClientsPage {
 	items: any;
 	searching: any = false;
 	datos: any;
+	alias: boolean;
 
   constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
   	this.searchControl = new FormControl();
@@ -58,5 +59,11 @@ export class ClientsPage {
 	setFilteredItems() {
 		this.items = this.dataService.filterItems(this.searchTerm);
 	}
+
+	aliasIf(){
+		console.log(this.datos.name);
+
+	}
+
 
 }
