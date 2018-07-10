@@ -4,6 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { EmailComposer } from '@ionic-native/email-composer';
+
 import { HttpModule } from '@angular/http';  
 
 import { InputTextModule } from 'primeng/primeng';
@@ -74,6 +76,7 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
+    EmailComposer,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
     ClientsProvider
