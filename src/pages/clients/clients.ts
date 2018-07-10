@@ -64,5 +64,4 @@ export class ClientsPage {
 		this.items = this.dataService.filterItems(this.searchTerm);
 	}
 
-
 }
