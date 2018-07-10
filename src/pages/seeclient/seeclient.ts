@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, AlertController, NavParams } from 'ionic-angular';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 // importacion de DataProvider
 import { ClientsProvider } from '../../providers/data/clients';
@@ -13,7 +14,11 @@ export class SeeclientPage {
 
   items: any;
 
-  constructor(public navCtrl: NavController, public alerta: AlertController, public navParams: NavParams, public dataService: ClientsProvider) {
+  constructor(public navCtrl: NavController,
+              public alerta: AlertController, 
+              public navParams: NavParams, 
+              public dataService: ClientsProvider,
+              public emailComposer: EmailComposer) {
     this.items = this.navParams.data;
     // console.log(this.items);
   }
