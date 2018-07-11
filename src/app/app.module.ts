@@ -25,6 +25,8 @@ import { SeeclientPage } from '../pages/seeclient/seeclient';
 import { AddclientPage } from '../pages/addclient/addclient';
 import { SignupPage } from '../pages/signup/signup';
 import { ResetpasswordPage } from '../pages/resetpassword/resetpassword';
+import { EmailPage } from '../pages/email/email';
+
 
 import { ChartsModule } from 'ng2-charts';
 import { DataProvider } from '../providers/data/data';
@@ -47,7 +49,8 @@ export const firebaseConfig = {
     SeeclientPage,
     AddclientPage,
     SignupPage,
-    ResetpasswordPage
+    ResetpasswordPage,
+    EmailPage
   ],
   imports: [
     BrowserModule,
@@ -71,7 +74,8 @@ export const firebaseConfig = {
     SeeclientPage,
     AddclientPage,
     SignupPage,
-    ResetpasswordPage
+    ResetpasswordPage,
+    EmailPage
   ],
   providers: [
     StatusBar,
