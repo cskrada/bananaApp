@@ -96,7 +96,7 @@
 				<span> {{ items.state }}, Venezuela</span>
 			</ion-col>
 		</ion-row>
-		<ion-row>
+		<ion-row padding-top>
 			<ion-col col-1 text-center>
 				<ion-icon name="phone-portrait"></ion-icon>
 			</ion-col>
@@ -108,10 +108,10 @@
 		</ion-row>
 		<ion-row>
 			<ion-col col-1 text-center>
-				<ion-icon name="mail"></ion-icon>
+				<ion-icon padding-vertical name="mail"></ion-icon>
 			</ion-col>
 			<ion-col col-11 text-left>
-				<span class="links"><u>{{ items.email }}</u></span>
+				<a ion-button clear no-padding (click)="">{{ items.email }}</a>
 			</ion-col>
 		</ion-row>
 		<ion-row>
@@ -119,7 +119,7 @@
 				<ion-icon name="link"></ion-icon>
 			</ion-col>
 			<ion-col col-11 text-left>
-				<span class="links"><u>www.pepsico.com.ve</u></span>
+				<a><u>www.pepsico.com.ve</u></a>
 			</ion-col>
 		</ion-row>
 		<ion-row>
