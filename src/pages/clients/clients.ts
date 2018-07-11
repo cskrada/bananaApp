@@ -24,15 +24,9 @@ export class ClientsPage {
 	searchControl: FormControl;
 	items: any;
 	searching: any = false;
-	datos: any;
-	
-  
 
   constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
   	this.searchControl = new FormControl();
-  	this.datos = this.dataService.items;
-
-  	// console.log(this.datos);
   	
   }// fin de constructor
 

@@ -13,9 +13,13 @@ export class SeeclientPage {
 
   items: any;
 
-  constructor(public navCtrl: NavController, public alerta: AlertController, public navParams: NavParams, public dataService: ClientsProvider) {
+  constructor(public navCtrl: NavController, 
+              public alerta: AlertController, 
+              public navParams: NavParams, 
+              public dataService: ClientsProvider){
+
     this.items = this.navParams.data;
-    // console.log(this.items);
+    
   }
 
   ionViewDidLoad() {
