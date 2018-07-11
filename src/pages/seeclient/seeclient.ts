@@ -25,7 +25,7 @@ export class SeeclientPage {
               public dataService: ClientsProvider,
               public emailComposer: EmailComposer) {
     this.items = this.navParams.data;
-    // console.log(this.items);
+    console.log(this.items);
   }
 
   ionViewDidLoad() {
@@ -76,8 +76,8 @@ export class SeeclientPage {
   	alert2.present();
   }
 
-  openEmail(item) {
-    this.navCtrl.push(EmailPage, item);
+  openEmail(items) {
+    this.navCtrl.push(EmailPage, items);
   }
 
 

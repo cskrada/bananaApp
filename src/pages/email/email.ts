@@ -22,6 +22,7 @@ export class EmailPage {
   			  public dataService: ClientsProvider, 
   			  public emailComposer: EmailComposer) {
   	this.items = this.navParams.data;
+  	console.log(this.items);
   }
 
   ionViewDidLoad() {
