@@ -9,6 +9,7 @@ import { ClientsProvider } from '../../providers/data/clients';
 // importacion de paginas
 import { EmailPage } from '../email/email';
 
+
 @IonicPage()
 @Component({
   selector: 'page-seeclient',
@@ -75,8 +76,8 @@ export class SeeclientPage {
   	alert2.present();
   }
 
-  openEmail(){
-    this.navCtrl.push(EmailPage);
+  openEmail(item) {
+    this.navCtrl.push(EmailPage, item);
   }
 
 

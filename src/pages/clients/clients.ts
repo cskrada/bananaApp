@@ -30,7 +30,6 @@ export class ClientsPage {
 
   constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
   	this.searchControl = new FormControl();
-  	this.datos = this.dataService.items;
 
   	// console.log(this.datos);
   	

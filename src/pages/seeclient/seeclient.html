@@ -20,7 +20,7 @@
 	                </ion-buttons>
 	              </td>
 	              <td>
-	                <ion-title text-left>Inicio</ion-title>
+	                <ion-title text-left>{{ items.razons }}</ion-title>
 	              </td>
 	            </tr>
 	          </table>
@@ -63,12 +63,12 @@
 	<ion-grid no-padding>
 		<ion-row>
 			<ion-col col-12 text-left>
-				<h2>{{ items.name }}</h2>
+				<h2>{{ items.razons }}</h2>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col col-12 text-left>
-				<span>Razón Social: {{ items.razons }}</span>
+				<span>Nombre Comercial: {{ items.name }}</span>
 			</ion-col>
 		</ion-row>
 		<ion-row>
@@ -111,7 +111,7 @@
 				<ion-icon padding-vertical name="mail"></ion-icon>
 			</ion-col>
 			<ion-col col-11 text-left>
-				<a ion-button clear no-padding (click)="openEmail()">{{ items.email }}</a>
+				<a ion-button clear no-padding (click)="openEmail(item)">{{ items.email }}</a>
 			</ion-col>
 		</ion-row>
 		<ion-row>

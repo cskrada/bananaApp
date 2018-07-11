@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EmailComposer } from '@ionic-native/email-composer';
 
-/**
- * Generated class for the EmailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+// importacion de DataProvider
+import { ClientsProvider } from '../../providers/data/clients';
 
 @IonicPage()
 @Component({
@@ -15,11 +12,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EmailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+	items: any;
+	subject= '';
+	body='';
+	to='';
+
+  constructor(public navCtrl: NavController, 
+  			  public navParams: NavParams,
+  			  public dataService: ClientsProvider, 
+  			  public emailComposer: EmailComposer) {
+  	this.items = this.navParams.data;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EmailPage');
   }
 
+  send(){
+  	let email = {
+  		to : this.to,
+  		cc: [],
+  		bcc: [],
+  		attachament: [],
+  		subject: this.subject,
+  		body: this.body,
+  		isHtml: false,
+  		app: "Gmail"
+  	}
+  	this.emailComposer.open(email);
+  }
 }

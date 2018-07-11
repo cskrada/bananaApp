@@ -9,12 +9,12 @@ export class ClientsProvider {
 
 // variable tipo arreglo de datos estaticos
 items: any;
-public aliasif: boolean;
+
 
 constructor(public http: Http) {
 
 	this.initializeItems();
-	this.aliasif= false;
+	
 
 
 } // fin del constructor
@@ -302,15 +302,6 @@ constructor(public http: Http) {
 			// a must be equal to b
 			return 0;
 		});
-	}
-
-	aliasIf(){
-
-		if ( this.items.name != this.items.alias ){
-			this.aliasif = true;
-		}else{
-			this.aliasif = false;
-		}
 	}
 
 
