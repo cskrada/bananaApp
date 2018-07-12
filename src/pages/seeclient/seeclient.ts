@@ -19,15 +19,6 @@ export class SeeclientPage {
 
   items: any;
 
-<<<<<<< HEAD
-  constructor(public navCtrl: NavController, 
-              public alerta: AlertController, 
-              public navParams: NavParams, 
-              public dataService: ClientsProvider){
-
-    this.items = this.navParams.data;
-    
-=======
   constructor(public navCtrl: NavController,
               public alerta: AlertController, 
               public navParams: NavParams, 
@@ -35,7 +26,6 @@ export class SeeclientPage {
               public emailComposer: EmailComposer) {
     this.items = this.navParams.data;
     console.log(this.items);
->>>>>>> email
   }
 
   ionViewDidLoad() {
@@ -43,47 +33,47 @@ export class SeeclientPage {
     console.log('ionViewDidLoad SeeclientPage');
   }
   archived(){
-  	let alert = this.alerta.create({
-  		title : 'Archivar Cliente',
-  		message : '¿Esta seguro que desea archivar este cliente?',
-  		buttons: [
-	        {	
-	          text: 'Cancelar',
-	          handler: data => {
-	            console.log('Cancelado!');
-	          }
-	        },
-	        {
-	          text: 'Archivar',
-	          handler: data => {
-	            console.log('Archivado!');
-	          }
-	        }
-      	]
-  	});
-  	alert.present();
+    let alert = this.alerta.create({
+      title : 'Archivar Cliente',
+      message : '¿Esta seguro que desea archivar este cliente?',
+      buttons: [
+          {  
+            text: 'Cancelar',
+            handler: data => {
+              console.log('Cancelado!');
+            }
+          },
+          {
+            text: 'Archivar',
+            handler: data => {
+              console.log('Archivado!');
+            }
+          }
+        ]
+    });
+    alert.present();
   }
 
   modified(){
-  	let alert2 = this.alerta.create({
-  		title : 'Modificar Cliente',
-  		message : '¿Esta seguro que desea modificar este cliente?',
-  		buttons: [
-	        {	
-	          text: 'Cancelar',
-	          handler: data => {
-	            console.log('Cancelado!');
-	          }
-	        },
-	        {
-	          text: 'Modificar',
-	          handler: data => {
-	            console.log('Modificado!');
-	          }
-	        }
-      	]
-  	});
-  	alert2.present();
+    let alert2 = this.alerta.create({
+      title : 'Modificar Cliente',
+      message : '¿Esta seguro que desea modificar este cliente?',
+      buttons: [
+          {  
+            text: 'Cancelar',
+            handler: data => {
+              console.log('Cancelado!');
+            }
+          },
+          {
+            text: 'Modificar',
+            handler: data => {
+              console.log('Modificado!');
+            }
+          }
+        ]
+    });
+    alert2.present();
   }
 
   openEmail(items) {

@@ -24,14 +24,14 @@ export class ClientsPage {
 	searchControl: FormControl;
 	items: any;
 	searching: any = false;
+	datos: any;
+	
+  
 
   constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
   	this.searchControl = new FormControl();
-<<<<<<< HEAD
-=======
 
   	// console.log(this.datos);
->>>>>>> email
   	
   }// fin de constructor
 
