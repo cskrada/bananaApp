@@ -1,135 +1,125 @@
 <!-- dentro de la etiqueta <ion-header> esta la barra de navegacion -->
 <ion-header>
-   <ion-navbar color="bananap">
-     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-grid no-padding>
-      <ion-row no-padding>
-        <ion-col col-1 no-padding>
-          <table>
-            <tr>
-              <td>
-                <ion-buttons start>
-                  <button ion-button icon-only>
-                  <ion-icon name="contact"></ion-icon>
-                  </button>
-                </ion-buttons>
-              </td>
-              <td>
-                <ion-title text-left>Inicio</ion-title>
-              </td>
-            </tr>
-          </table>
-        </ion-col>
-        <ion-col col-11 no-padding>
-          <ion-buttons end text-end>
-            <button ion-button icon-only>
-               <ion-icon name="more"></ion-icon>
-            </button>
-          </ion-buttons>
-        </ion-col>
-      </ion-row>
-    </ion-grid>   
-   </ion-navbar>
+	<ion-navbar color="bananap">
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-grid no-padding>
+			<ion-row no-padding>
+				<ion-col col-1 no-padding>
+					<table>
+						<tr>
+							<td>
+								<ion-buttons start>
+									<button ion-button icon-only>
+										<ion-icon name="contact"></ion-icon>
+									</button>
+								</ion-buttons>
+							</td>
+							<td>
+								<ion-title text-left>Inicio</ion-title>
+							</td>
+						</tr>
+					</table>
+				</ion-col>
+				<ion-col col-11 no-padding>
+					<ion-buttons end text-end>
+						<button ion-button icon-only>
+							<ion-icon name="more"></ion-icon>
+						</button>
+					</ion-buttons>
+				</ion-col>
+			</ion-row>
+		</ion-grid>   
+	</ion-navbar>
 </ion-header>
 <!-- --------------------------------------- END HEADER--------------------------------------------- -->
 
 <ion-content padding>
-  <ion-grid no-padding>
-    <!-- inicio de tarjetas -->
-    <ion-row no-padding>
-      <ion-col col-6 no-padding align-self-center>
-          <ion-card class="clientes" no-padding (click)="clients()">
-            <ion-card-header text-center>
-              <ion-icon name="people"></ion-icon>
-            </ion-card-header>
-
-            <ion-card-content text-center no-padding padding-bottom>
-              CLIENTES
-            </ion-card-content>
-          </ion-card>
-      </ion-col>
-
-      <ion-col col-6 no-padding align-self-center>
-        <ion-card class="pedidos">
-          <ion-card-header text-center>
-            <ion-icon name="cart"></ion-icon>
-          </ion-card-header>
-
-          <ion-card-content text-center no-padding padding-bottom>
-            PEDIDOS
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col col-6 no-padding align-self-center>
-        <ion-card class="pedidos">
-          <ion-card-header text-center>
-            <ion-icon name="ionic"></ion-icon>
-          </ion-card-header>
-
-          <ion-card-content text-center no-padding padding-bottom>
-            OTROS
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-
-      <ion-col col-6 no-padding align-self-center>
-        <ion-card class="pedidos">
-          <ion-card-header text-center>
-            <ion-icon name="build"></ion-icon>
-          </ion-card-header>
-
-          <ion-card-content text-center no-padding padding-bottom>
-            CONFIG
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <!-- fin de tarjetas -->
-    <ion-row>
-      <ion-col>
-        <hr>
-      </ion-col>
-    </ion-row>
-    <!-- a partir de aqui son las graficas -->
-    <ion-row>
-      <ion-col col-12>
-        <div style="display: block">
-          <canvas baseChart
-                  [data]="pieChartData"
-                  [labels]="pieChartLabels"
-                  [chartType]="pieChartType"
-                  (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)">
-          </canvas>
-        </div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col-12>
-        <hr>
-          <div style="display: block">
-            <canvas baseChart
-              [datasets]="barChartData"
-              [labels]="barChartLabels"
-              [options]="barChartOptions"
-              [legend]="barChartLegend"
-              [chartType]="barChartType"
-              (chartHover)="chartHovered2($event)"
-              (chartClick)="chartClicked2($event)"></canvas>
-          </div>
-          <button (click)="randomize()">Actualizar</button>
-      </ion-col>
-    </ion-row>
-    <!-- fin de graficas -->
-    <ion-row>
-    	<ion-col>
-    	<br><br><br>
-    	</ion-col>
-    </ion-row>
+	<ion-grid no-padding>
+		<ion-row no-padding>
+			<ion-col col-6 no-padding align-self-center>
+				<ion-card class="clientes" no-padding (click)="clients()">
+					<ion-card-header text-center>
+						<ion-icon name="people"></ion-icon>
+					</ion-card-header>
+					<ion-card-content text-center no-padding padding-bottom>
+						CLIENTES
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+			<ion-col col-6 no-padding align-self-center>
+				<ion-card class="pedidos">
+					<ion-card-header text-center>
+						<ion-icon name="cart"></ion-icon>
+					</ion-card-header>
+					<ion-card-content text-center no-padding padding-bottom>
+						PEDIDOS
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-6 no-padding align-self-center>
+				<ion-card class="pedidos">
+					<ion-card-header text-center>
+						<ion-icon name="ionic"></ion-icon>
+					</ion-card-header>
+					<ion-card-content text-center no-padding padding-bottom>
+						OTROS
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+			<ion-col col-6 no-padding align-self-center>
+				<ion-card class="pedidos">
+					<ion-card-header text-center>
+						<ion-icon name="build"></ion-icon>
+					</ion-card-header>
+					<ion-card-content text-center no-padding padding-bottom>
+						CONFIG
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+		</ion-row>
+	<ion-row>
+		<ion-col>
+			<hr>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col col-12>
+			<div style="display: block">
+					<canvas baseChart
+					[data]="pieChartData"
+					[labels]="pieChartLabels"
+					[chartType]="pieChartType"
+					(chartHover)="chartHovered($event)"
+					(chartClick)="chartClicked($event)">
+					</canvas>
+				</div>
+			</ion-col>
+	</ion-row>
+	 <ion-row>
+		<ion-col col-12>
+		  <hr>
+			 <div style="display: block">
+				<canvas baseChart
+				  [datasets]="barChartData"
+				  [labels]="barChartLabels"
+				  [options]="barChartOptions"
+				  [legend]="barChartLegend"
+				  [chartType]="barChartType"
+				  (chartHover)="chartHovered2($event)"
+				  (chartClick)="chartClicked2($event)"></canvas>
+			 </div>
+			 <button (click)="randomize()">Actualizar</button>
+		</ion-col>
+	 </ion-row>
+	 <!-- fin de graficas -->
+	 <ion-row>
+		<ion-col>
+		<br><br><br>
+		</ion-col>
+	 </ion-row>
   </ion-grid>
 </ion-content>
