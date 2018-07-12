@@ -18,9 +18,9 @@ export class ResetpasswordPage {
 	items: any;
 	searching: any = false;
 
-constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
-  	this.searchControl = new FormControl();
-}
+	constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
+		this.searchControl = new FormControl();
+	}
 
 	ionViewDidLoad() {
 		this.items = this.dataService.orderList(this.items);
@@ -37,10 +37,6 @@ constructor(public navCtrl: NavController, public dataService: ClientsProvider) 
 
 	setFilteredItems() {
 		this.items = this.dataService.filterItems(this.searchTerm);
-
-		
-		// prueba
-		// console.log(this.searchTerm+' '+this.searchTerm.length);
 	}
 
 }

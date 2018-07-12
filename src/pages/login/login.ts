@@ -13,71 +13,67 @@ import { ResetpasswordPage } from '../resetpassword/resetpassword';
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+selector: 'page-login',
+templateUrl: 'login.html',
 })
 export class LoginPage {
-  
-  myForm: FormGroup;
-  public loading:Loading;
 
-  constructor(public navCtrl: NavController,
-              public formBuilder:FormBuilder,
-              public afAuth: AngularFireAuth,
-              public alertCtrl: AlertController,
-              public loadingCtrl: LoadingController){
-    
-    this.myForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-    }); 
-      
-  }
+	myForm: FormGroup;
+	public loading:Loading;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
+constructor(public navCtrl: NavController,
+				public formBuilder:FormBuilder,
+				public afAuth: AngularFireAuth,
+				public alertCtrl: AlertController,
+				public loadingCtrl: LoadingController){
 
-  // este metodo hace la validacion de los datos ingresados, esta añadida el evento de loading
-  loginUser(){
+	this.myForm = this.formBuilder.group({
+		email: ['', Validators.required],
+		password: ['', Validators.required]
+	}); 
+}
 
-    console.log("Email:" + this.myForm.value.email);
-    console.log("Password:" + this.myForm.value.password);
-   
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad LoginPage');
+	}
 
-    this.afAuth.auth.signInWithEmailAndPassword(this.myForm.value.email, this.myForm.value.password).then(() => {
-      console.log("User logging");
-      this.navCtrl.setRoot(HomePage);
-    }, (err) => {
-      this.loading.dismiss().then( () => {
-        let alert = this.alertCtrl.create({
-          message: err.message,
-          buttons: [
-            {
-              text: "Ok",
-              role: 'cancel'
-            }
-          ]
-        });
-        alert.present();
-      });
-    });
+	// este metodo hace la validacion de los datos ingresados, esta añadida el evento de loading
+	loginUser(){
 
-    this.loading = this.loadingCtrl.create({
-      dismissOnPageChange: true,
-    });
-    this.loading.present();
-  }
+		console.log("Email:" + this.myForm.value.email);
+		console.log("Password:" + this.myForm.value.password);
 
+		this.afAuth.auth.signInWithEmailAndPassword(this.myForm.value.email, this.myForm.value.password).then(() => {
+			console.log("User logging");
+			this.navCtrl.setRoot(HomePage);
+			}, (err) => {
+			this.loading.dismiss().then( () => {
+				let alert = this.alertCtrl.create({
+					message: err.message,
+					buttons: [
+					{
+						text: "Ok",
+						role: 'cancel'
+					}
+					]
+				});
+				alert.present();
+			});
+		});
+		this.loading = this.loadingCtrl.create({
+			dismissOnPageChange: true,
+		});
+		this.loading.present();
+	}
 
-  //goToSignup(): redirige a la pagina para crear un usuario (opcional)
-  goToSignup(){
-    this.navCtrl.push(SignupPage);
-  }
+	//goToSignup(): redirige a la pagina para crear un usuario (opcional)
+	goToSignup(){
+		this.navCtrl.push(SignupPage);
+	}
 
-  //goToResetPassword(): redirige a la pagina para recuperar la contraseña
-  goToResetPassword(){
-    this.navCtrl.push(ResetpasswordPage);
-  }
+	//goToResetPassword(): redirige a la pagina para recuperar la contraseña
+	goToResetPassword(){
+		this.navCtrl.push(ResetpasswordPage);
+	}
 
 }

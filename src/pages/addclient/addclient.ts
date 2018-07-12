@@ -101,11 +101,12 @@ export class AddclientPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private viewCtrl: ViewController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddclientPage');
-  }
-  close(){
-  	this.viewCtrl.dismiss();
-  }
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad AddclientPage');
+	}
+	
+	close(){
+		this.viewCtrl.dismiss();
+	}
 
 }

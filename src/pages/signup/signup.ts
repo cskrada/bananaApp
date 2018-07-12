@@ -26,30 +26,28 @@ export class SignupPage {
 	//cuando este en true se activan los observables y se ejecuta el spinner
 	searching: any = false;
 
-constructor(public navCtrl: NavController, public dataService: DataProvider) {
-	
+constructor(public navCtrl: NavController, 
+				public dataService: DataProvider) {
 	// Con FormControl, nos podemos suscribir al observable valueChange que emitirá algunos datos cada vez que cambie el valor del campo de entrada
 	this.searchControl = new FormControl();
-
 }
 	// carga la vista con el metodo que esta siendo llamado declarado mas abajo. lo que nos permite especificar el tiempo que queremos esperar antes de activar lo observable
 	// y tambien se declara el false searching para que se mantenga oculto
 	ionViewDidLoad() {
-	this.setFilteredItems();
+		this.setFilteredItems();
 		this.searchControl.valueChanges.debounceTime(700).subscribe(search  => {
 			this.searching = false;
 			this.setFilteredItems();
 		});
 	}
 
-	// este metodo hace que se active el spinner y es llamado desde el archivo hmtl
+// este metodo hace que se active el spinner y es llamado desde el archivo hmtl
 	onSearchInput(){
 		this.searching= true;
 	}
 
-	// devolverá un array de datos en función de los términos de búsqueda enviados
+// devolverá un array de datos en función de los términos de búsqueda enviados
 	setFilteredItems() {
 		this.items = this.dataService.filterItems(this.searchTerm);
 	}
-
 }

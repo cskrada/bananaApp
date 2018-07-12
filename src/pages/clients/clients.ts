@@ -19,25 +19,18 @@ export class ClientsPage {
 
 	// variable que almacena los valores del arreglo tipo objeto
 	// items;
-
 	searchTerm: string = '';
 	searchControl: FormControl;
 	items: any;
 	searching: any = false;
-	datos: any;
-	
-  
 
-  constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
-  	this.searchControl = new FormControl();
+	constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
+		this.searchControl = new FormControl();
 
-  	// console.log(this.datos);
-  	
-  }// fin de constructor
+	}// fin de constructor
 
 	openPage(item) {
 		this.navCtrl.push(SeeclientPage, item);
-		// console.log(item);
 	}
 
 	// redirecciona la pagina para AgregarCliente
@@ -46,13 +39,12 @@ export class ClientsPage {
 	}
 
 	ionViewDidLoad() {
-
 		this.items = this.dataService.orderList(this.items);
 		this.setFilteredItems();
-			this.searchControl.valueChanges.debounceTime(700).subscribe(search  => {
+		this.searchControl.valueChanges.debounceTime(700).subscribe(search  => {
 			this.searching = false;
 			this.setFilteredItems();
-			});
+		});
 	}
 
 	onSearchInput(){
@@ -62,5 +54,4 @@ export class ClientsPage {
 	setFilteredItems() {
 		this.items = this.dataService.filterItems(this.searchTerm);
 	}
-
 }
