@@ -9,10 +9,18 @@ export class ClientsProvider {
 
 // variable tipo arreglo de datos estaticos
 items: any;
+<<<<<<< HEAD
+=======
+
+>>>>>>> email
 
 constructor(public http: Http) {
 
 	this.initializeItems();
+<<<<<<< HEAD
+=======
+	
+>>>>>>> email
 
 
 } // fin del constructor
@@ -302,4 +310,8 @@ constructor(public http: Http) {
 		});
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> email
 }

@@ -4,6 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { EmailComposer } from '@ionic-native/email-composer';
+
 import { HttpModule } from '@angular/http';  
 
 import { InputTextModule } from 'primeng/primeng';
@@ -23,6 +25,8 @@ import { SeeclientPage } from '../pages/seeclient/seeclient';
 import { AddclientPage } from '../pages/addclient/addclient';
 import { SignupPage } from '../pages/signup/signup';
 import { ResetpasswordPage } from '../pages/resetpassword/resetpassword';
+import { EmailPage } from '../pages/email/email';
+
 
 import { ChartsModule } from 'ng2-charts';
 import { DataProvider } from '../providers/data/data';
@@ -45,7 +49,8 @@ export const firebaseConfig = {
     SeeclientPage,
     AddclientPage,
     SignupPage,
-    ResetpasswordPage
+    ResetpasswordPage,
+    EmailPage
   ],
   imports: [
     BrowserModule,
@@ -69,11 +74,13 @@ export const firebaseConfig = {
     SeeclientPage,
     AddclientPage,
     SignupPage,
-    ResetpasswordPage
+    ResetpasswordPage,
+    EmailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    EmailComposer,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
     ClientsProvider

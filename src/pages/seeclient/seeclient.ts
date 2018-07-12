@@ -1,8 +1,14 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, AlertController, NavParams } from 'ionic-angular';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 // importacion de DataProvider
 import { ClientsProvider } from '../../providers/data/clients';
+
+
+// importacion de paginas
+import { EmailPage } from '../email/email';
+
 
 @IonicPage()
 @Component({
@@ -13,6 +19,7 @@ export class SeeclientPage {
 
   items: any;
 
+<<<<<<< HEAD
   constructor(public navCtrl: NavController, 
               public alerta: AlertController, 
               public navParams: NavParams, 
@@ -20,6 +27,15 @@ export class SeeclientPage {
 
     this.items = this.navParams.data;
     
+=======
+  constructor(public navCtrl: NavController,
+              public alerta: AlertController, 
+              public navParams: NavParams, 
+              public dataService: ClientsProvider,
+              public emailComposer: EmailComposer) {
+    this.items = this.navParams.data;
+    console.log(this.items);
+>>>>>>> email
   }
 
   ionViewDidLoad() {
@@ -68,6 +84,10 @@ export class SeeclientPage {
       	]
   	});
   	alert2.present();
+  }
+
+  openEmail(items) {
+    this.navCtrl.push(EmailPage, items);
   }
 
 

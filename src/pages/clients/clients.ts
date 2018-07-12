@@ -27,6 +27,11 @@ export class ClientsPage {
 
   constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
   	this.searchControl = new FormControl();
+<<<<<<< HEAD
+=======
+
+  	// console.log(this.datos);
+>>>>>>> email
   	
   }// fin de constructor
 
@@ -57,6 +62,5 @@ export class ClientsPage {
 	setFilteredItems() {
 		this.items = this.dataService.filterItems(this.searchTerm);
 	}
-
 
 }
