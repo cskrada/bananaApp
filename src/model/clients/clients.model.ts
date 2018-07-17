@@ -10,5 +10,5 @@ export interface Clients {
 	city: string;
 	country: string;
 	phone: string;
-	email1: string;
+	email: string;
 }
