@@ -17,6 +17,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { FIREBASE_CREDENTIALS } from './firebase.credentials';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
@@ -32,6 +34,7 @@ import { ChartsModule } from 'ng2-charts';
 import { DataProvider } from '../providers/data/data';
 import { ClientsProvider } from '../providers/data/clients';
 
+// conexion a bananaApp
 // export const firebaseConfig = {
 //   apiKey: "AIzaSyBpIBL-h59BW8L3zHF22eHcMabZtkh4hMA",
 //   authDomain: "bananaapp8.firebaseapp.com",
@@ -40,13 +43,14 @@ import { ClientsProvider } from '../providers/data/clients';
 //   messagingSenderId: '623763613345'
 // };
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyCCc_m4cL7qTat3HRVwdgdPvAffdjSgp2I",
-  authDomain: "banana-light.firebaseapp.com",
-  databaseURL: "https://banana-light.firebaseio.com",
-  storageBucket: "banana-light.appspot.com",
-  messagingSenderId: '960529017626'
-};
+// bananaLight
+// export const firebaseConfig = {
+//   apiKey: "AIzaSyCCc_m4cL7qTat3HRVwdgdPvAffdjSgp2I",
+//   authDomain: "banana-light.firebaseapp.com",
+//   databaseURL: "https://banana-light.firebaseio.com",
+//   storageBucket: "banana-light.appspot.com",
+//   messagingSenderId: '960529017626'
+// };
 
 @NgModule({
   declarations: [
@@ -70,7 +74,7 @@ export const firebaseConfig = {
     FormsModule,
     ReactiveFormsModule,
     DialogModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(FIREBASE_CREDENTIALS),
     AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
