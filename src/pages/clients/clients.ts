@@ -11,11 +11,6 @@ import 'rxjs/add/operator/debounceTime';
 import { SeeclientPage } from '../seeclient/seeclient';
 import { AddclientPage } from '../addclient/addclient';
 
-// importaciones para bdd firebase
-import { Observable } from 'rxjs/Observable';
-import { Clients } from '../../model/clients/clients.model';
-import { ClientListService } from '../../services/clients.service';
-
 @Component({
   selector: 'page-clients',
   templateUrl: 'clients.html',
@@ -28,22 +23,8 @@ export class ClientsPage {
 	searchControl: FormControl;
 	items: any;
 	searching: any = false;
-	clientList: Observable < Clients[] >; 
 
-	constructor(public navCtrl: NavController,
-				public dataService: ClientsProvider,
-				private clientService: ClientListService) {
-		this.clientList = this.clientService.getClientList()
-			.snapshotChanges()
-			.map(
-			changes => {
-				return changes.map(c => ({
-					key: c.payload.key, ...c.payload.val()
-				}))
-			});
-
-			console.log(this.clientList);
-		
+	constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
 		this.searchControl = new FormControl();
 
 	}// fin de constructor
