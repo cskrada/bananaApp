@@ -32,7 +32,6 @@ import { EmailPage } from '../pages/email/email';
 import { ChartsModule } from 'ng2-charts';
 import { DataProvider } from '../providers/data/data';
 import { ClientsProvider } from '../providers/data/clients';
-import { ClientListService } from '../services/clients.service';
 
 @NgModule({
   declarations: [
@@ -77,8 +76,7 @@ import { ClientListService } from '../services/clients.service';
     EmailComposer,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
-    ClientsProvider,
-    ClientListService
+    ClientsProvider
   ]
 })
 export class AppModule {}
