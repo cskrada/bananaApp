@@ -25,11 +25,11 @@
 					</table>
 				</ion-col>
 				<ion-col col-11 no-padding>
-						<ion-buttons end text-end>
-							<button ion-button icon-only>
-								<ion-icon name="more"></ion-icon>
-							</button>
-						</ion-buttons>
+					<ion-buttons end text-end>
+						<button ion-button icon-only>
+							<ion-icon name="more"></ion-icon>
+						</button>
+					</ion-buttons>
 				</ion-col>
 			</ion-row>
 		</ion-grid>
@@ -61,32 +61,39 @@
 		<ion-row>
 			<ion-col>
 				<ion-item no-padding>
-					<ion-input type="text" placeholder="Razón Social"></ion-input>
+					<ion-input type="text" [(ngModel)]="clients.business_name" placeholder="Razón Social"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col>
 				<ion-item no-padding>
-					<ion-input type="text" placeholder="Nombre Comercial"></ion-input>
+					<ion-input type="text" [(ngModel)]="clients.trade_name" placeholder="Nombre Comercial"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col>
 				<ion-item no-padding>
-					<ion-input type="text" placeholder="Alias"></ion-input>
+					<ion-input type="text" [(ngModel)]="clients.alias" placeholder="Alias"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col>
 				<ion-item no-padding>
-					<ion-input type="text" placeholder="Dirección 1"></ion-input>
+					<ion-input type="text" [(ngModel)]="clients.rif" placeholder="RIF"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		<ion-row>
+			<ion-col>
+				<ion-item no-padding>
+					<ion-input type="text" [(ngModel)]="clients.address" placeholder="Dirección 1"></ion-input>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<!-- <ion-row>
 			<ion-col>
 				<ion-item no-padding>
 					<ion-input type="text" placeholder="Dirección 2"></ion-input>
@@ -106,20 +113,20 @@
 					<ion-input type="text" placeholder="Dirección 4"></ion-input>
 				</ion-item>
 			</ion-col>
-		</ion-row>
+		</ion-row> -->
 		<ion-row>
 			<ion-col>
 				<ion-item no-padding>
-					<ion-input type="text" placeholder="Código postal"></ion-input>
+					<ion-input type="text" [(ngModel)]="clients.code_p" placeholder="Código postal"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
-		<ion-row>
+		<!-- <ion-row>
 			<ion-col>
 				<ion-item no-padding>
 					<ion-label>Ciudad</ion-label>
 						<ion-select interface="popover">
-							<ion-option *ngFor="let city of cities" value="{{ city.id }}"> {{ city.name }} </ion-option>
+							<ion-option *ngFor="let city of cities"  value="{{ city.id }}"> {{ city.name }} </ion-option>
 						</ion-select>
 				</ion-item>
 			</ion-col>
@@ -129,7 +136,7 @@
 				<ion-item no-padding>
 					<ion-label>Estado</ion-label>
 						<ion-select interface="popover">
-							<ion-option *ngFor="let state of states" value="{{ state.id }}"> {{ state.name }} </ion-option>
+							<ion-option *ngFor="let state of states"  value="{{ state.id }}"> {{ state.name }} </ion-option>
 						</ion-select>
 				</ion-item>
 			</ion-col>
@@ -143,35 +150,35 @@
 						</ion-select>
 				</ion-item>
 			</ion-col>
-		</ion-row>
+		</ion-row> -->
 		<ion-row>
 			<ion-col>
 				<ion-item no-padding>
-					<ion-input type="text" placeholder="Teléfono 1"></ion-input>
+					<ion-input type="text" [(ngModel)]="clients.phone" placeholder="Teléfono 1"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
-		<ion-row>
+	<!-- 	<ion-row>
 			<ion-col>
 				<ion-item no-padding>
 					<ion-input type="text" placeholder="Teléfono 2"></ion-input>
 				</ion-item>
 			</ion-col>
-		</ion-row>
+		</ion-row> -->
 		<ion-row>
 			<ion-col>
 				<ion-item no-padding>
-					<ion-input type="email" placeholder="Correo electrónico"></ion-input>
+					<ion-input type="email" [(ngModel)]="clients.email" placeholder="Correo electrónico"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
-		<ion-row>
+		<!-- <ion-row>
 			<ion-col>
 				<ion-item no-padding>
 					<ion-input type="text" placeholder="Sitio Web"></ion-input>
 				</ion-item>
 			</ion-col>
-		</ion-row>
+		</ion-row> -->
 		<ion-row padding-top>
 			<ion-col col-12 text-center>
 				<button ion-button icon-left color="primary">
@@ -185,6 +192,14 @@
 				<button ion-button icon-left color="primary">
 				  <ion-icon name="contacts"></ion-icon>
 				  Sucursales
+				</button>
+			</ion-col>
+		</ion-row>
+		<ion-row padding-top>
+			<ion-col col-12 text-center>
+				<button ion-button block color="primary" (click)="addClient(clients)">
+				  <ion-icon name="home"></ion-icon>
+				  Add
 				</button>
 			</ion-col>
 		</ion-row>

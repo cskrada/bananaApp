@@ -15,8 +15,8 @@ import { DialogModule } from 'primeng/primeng';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
 import { FIREBASE_CREDENTIALS } from './firebase.credentials';
 
 import { MyApp } from './app.component';
@@ -56,6 +56,7 @@ import { ClientsProvider } from '../providers/data/clients';
     ReactiveFormsModule,
     DialogModule,
     AngularFireModule.initializeApp(FIREBASE_CREDENTIALS),
+    AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
