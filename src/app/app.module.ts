@@ -6,7 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { EmailComposer } from '@ionic-native/email-composer';
 
-import { HttpModule } from '@angular/http';  
+import { HttpModule } from '@angular/http'; 
+import {HttpClientModule} from '@angular/common/http';
 
 import { InputTextModule } from 'primeng/primeng';
 import { ButtonModule } from 'primeng/primeng';
@@ -54,6 +55,7 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
     ChartsModule,
