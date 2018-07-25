@@ -1,11 +1,10 @@
 // importaciones de librerias
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { NavController } from 'ionic-angular';
+import { ClientsServiceProvider } from '../../providers/clients-service/clients-service';
 
 // importacion de Data Provider prueba de busqueda
-import { ClientsProvider } from '../../providers/data/clients';
-import 'rxjs/add/operator/debounceTime';
+
 
 @Component({
   selector: 'page-resetpassword',
@@ -13,30 +12,19 @@ import 'rxjs/add/operator/debounceTime';
 })
 export class ResetpasswordPage {
 
-	searchTerm: string = '';
-	searchControl: FormControl;
-	items: any;
-	searching: any = false;
+	clients: any[] = [];
 
-	constructor(public navCtrl: NavController, public dataService: ClientsProvider) {
-		this.searchControl = new FormControl();
+	constructor(public navCtrl: NavController, public clientsService: ClientsServiceProvider) {
+		
 	}
 
 	ionViewDidLoad() {
-		this.items = this.dataService.orderList(this.items);
-		this.setFilteredItems();
-		this.searchControl.valueChanges.debounceTime(600).subscribe(search => {
-			this.searching = false;
-			this.setFilteredItems();
-		});
+		this.clientsService.getClients().subscribe(
+			(data) => { // Success
+			this.clients = data['results'];
+			}, (error) =>{
+			console.error(error);
+			});
 	}
-
-	onSearchInput(){
-		this.searching= true;
-	}
-
-	setFilteredItems() {
-		this.items = this.dataService.filterItems(this.searchTerm);
-	}
-
+	
 }
