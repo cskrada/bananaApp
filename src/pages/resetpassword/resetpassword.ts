@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ClientsServiceProvider } from '../../providers/clients-service/clients-service';
 
-// importacion de Data Provider prueba de busqueda
 
 
 @Component({
@@ -26,5 +25,4 @@ export class ResetpasswordPage {
 			console.error(error);
 			});
 	}
-	
 }

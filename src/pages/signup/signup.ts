@@ -1,11 +1,8 @@
 // importaciones de librerias
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { NavController } from 'ionic-angular';
-
-// importacion de Data Provider prueba de busqueda
-import { DataProvider } from '../../providers/data/data';
-import 'rxjs/add/operator/debounceTime';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserServiceProvider } from '../../providers/user-service/user-service'
 
 
 @Component({
@@ -14,40 +11,23 @@ templateUrl: 'signup.html',
 })
 export class SignupPage {
 
-	// el usuario podrá controlar, y esto se suministra a la función setFilteredItems que llamará a la función del provider
-	searchTerm: string = '';
+	myForm: FormGroup;
 
-	// variable con instancia de Control
-	searchControl: FormControl;
-
-	// items: se almacena el array
-	items: any;
-
-	//cuando este en true se activan los observables y se ejecuta el spinner
-	searching: any = false;
-
-constructor(public navCtrl: NavController, 
-				public dataService: DataProvider) {
-	// Con FormControl, nos podemos suscribir al observable valueChange que emitirá algunos datos cada vez que cambie el valor del campo de entrada
-	this.searchControl = new FormControl();
+constructor(public navCtrl: NavController,
+			public formBuilder:FormBuilder,
+			public userService:UserServiceProvider
+			) {
+	this.myForm = this.formBuilder.group({	
+		email: ['', Validators.required],
+		password: ['', Validators.required]
+	}); 
 }
-	// carga la vista con el metodo que esta siendo llamado declarado mas abajo. lo que nos permite especificar el tiempo que queremos esperar antes de activar lo observable
-	// y tambien se declara el false searching para que se mantenga oculto
 	ionViewDidLoad() {
-		this.setFilteredItems();
-		this.searchControl.valueChanges.debounceTime(700).subscribe(search  => {
-			this.searching = false;
-			this.setFilteredItems();
-		});
 	}
 
-// este metodo hace que se active el spinner y es llamado desde el archivo hmtl
-	onSearchInput(){
-		this.searching= true;
-	}
-
-// devolverá un array de datos en función de los términos de búsqueda enviados
-	setFilteredItems() {
-		this.items = this.dataService.filterItems(this.searchTerm);
+	loginUser(){
+		console.log("Email:" + this.myForm.value.email);
+		console.log("Password:" + this.myForm.value.password);
+		this.userService.postLogin(this.myForm.value.email, this.myForm.value.password);
 	}
 }

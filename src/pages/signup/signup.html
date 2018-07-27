@@ -6,14 +6,21 @@
 	</ion-navbar>
 </ion-header>
 <ion-content>
-	<ion-searchbar [(ngModel)]="searchTerm"  [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
-	<div *ngIf="searching" class="spinner-container">
-	<ion-spinner></ion-spinner>
-	</div>
-
-	<ion-list>
-		<ion-item *ngFor="let item of items">
-			{{ item.title }}
-		</ion-item>
-	</ion-list>
+	<form [formGroup]="myForm" (ngSubmit)="loginUser()">
+		<ion-list>
+			<ion-item>
+				<ion-label floating>Correo electrónico</ion-label>
+				<ion-input formControlName="email" type="email"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label floating>Contraseña</ion-label>
+				<ion-input formControlName="password" type="password"></ion-input>
+			</ion-item>
+		</ion-list>
+		<div padding-top>
+			<button ion-button color="primary" type="submit" [disabled]="!myForm.valid">
+				Iniciar sesión
+			</button>
+		</div>
+	</form>
 </ion-content>

@@ -4,8 +4,6 @@ import { IonicPage, NavController,LoadingController,Loading, AlertController } f
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
 
-import {HttpClient} from '@angular/common/http';
-
 
 //importacion de paginas
 import { HomePage } from '../home/home';
@@ -28,8 +26,7 @@ constructor(public navCtrl: NavController,
 				public formBuilder:FormBuilder,
 				public afAuth: AngularFireAuth,
 				public alertCtrl: AlertController,
-				public loadingCtrl: LoadingController,
-				private http: HttpClient){
+				public loadingCtrl: LoadingController){
 
 	this.myForm = this.formBuilder.group({
 		email: ['', Validators.required],
@@ -42,7 +39,6 @@ constructor(public navCtrl: NavController,
 	// }
 
 	ionViewDidLoad() {
-		this.testService();
 		console.log('ionViewDidLoad LoginPage');
 	}
 
@@ -84,12 +80,5 @@ constructor(public navCtrl: NavController,
 		this.navCtrl.push(ResetpasswordPage);
 	}
 
-	testService () {
-		this.http.get('http://192.168.1.66:8000/api/cskrada').subscribe(data => {
-      // Read the result field from the JSON response.
-      this.results = data['service'];
-      console.log(this.results);
-    });
-	}
 
 }
