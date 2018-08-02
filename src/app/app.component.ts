@@ -50,7 +50,7 @@ export class MyApp {
         this.results.push(data['user']);
         this.results.push(data['storage']);
         this.results.push(data['storageName']);
-        console.log('si');
+        console.log(this.results);
       }, error => {
         console.log('no');
       });

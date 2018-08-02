@@ -3,15 +3,11 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController,LoadingController,Loading, AlertController, MenuController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { Injectable } from '@angular/core';
-// import { AngularFireAuth } from 'angularfire2/auth';
-
 
 //importacion de paginas
 import { HomePage } from '../home/home';
 import { SignupPage } from '../signup/signup';
 import { ResetpasswordPage } from '../resetpassword/resetpassword';
-
 
 @IonicPage()
 @Component({
@@ -22,7 +18,6 @@ export class LoginPage {
 
 	myForm: FormGroup;
 	public loading:Loading;
-	session: any ;
 	public results : string[] = [];
 
 constructor(public navCtrl: NavController,
@@ -59,15 +54,30 @@ constructor(public navCtrl: NavController,
 	  						.set('authorization', 'http://localhost:4200')
 	  						.set('app', 'BananaCli')
 	  	}).subscribe(data => {
+	  			this.menu.enable(true, 'authenticated');
 				this.results.push(data['user']);
 				this.results.push(data['storage']);
 				this.results.push(data['storageName']);
-				this.session = true;
+				console.log(this.results);
 				this.navCtrl.setRoot(HomePage);
 			}, error => {
-				console.log('no');
-				this.session = false;
+				this.loading.dismiss().then( () => {
+				let alert = this.alertCtrl.create({
+					message: "el email o la contraseña no es correcta, por favor ingrese de nuevo",
+					buttons: [
+					{
+						text: "Ok",
+						role: 'cancel'
+					}
+					]
+				});
+				alert.present();
 			});
+		});// fin de susbcribe
+	  	this.loading = this.loadingCtrl.create({
+			dismissOnPageChange: true,
+		});
+		this.loading.present();
 	}
 
 	goToSignup(){
