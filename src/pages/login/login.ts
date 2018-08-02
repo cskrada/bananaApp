@@ -63,7 +63,7 @@ constructor(public navCtrl: NavController,
 			}, error => {
 				this.loading.dismiss().then( () => {
 				let alert = this.alertCtrl.create({
-					message: "el email o la contraseña no es correcta, por favor ingrese de nuevo",
+					message: "el email o la contraseña no es correcta, por favor ingrese de nuevo sus datos",
 					buttons: [
 					{
 						text: "Ok",
@@ -85,7 +85,30 @@ constructor(public navCtrl: NavController,
 	}
 
 	goToResetPassword(){
-		this.navCtrl.push(ResetpasswordPage);
+
+		this.http.get('https://randomuser.me/api/?results=25').subscribe(
+			(data) => { // Success
+				
+				this.navCtrl.push(ResetpasswordPage);
+			}, (error) =>{
+				console.error(error);
+				this.loading.dismiss().then( () => {
+					let alert = this.alertCtrl.create({
+						message: "error",
+						buttons: [
+						{
+							text: "Ok",
+							role: 'cancel'
+						}
+						]
+					});
+					alert.present();
+				});
+			});
+		this.loading = this.loadingCtrl.create({
+			dismissOnPageChange: true,
+		});
+		this.loading.present();
 	}
 
 }
