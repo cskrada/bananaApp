@@ -11,14 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
-// import { HttpClient } from '@angular/common/http';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
 var SignupPage = /** @class */ (function () {
     function SignupPage(navCtrl, formBuilder, userService) {
         this.navCtrl = navCtrl;
         this.formBuilder = formBuilder;
         this.userService = userService;
-        this.user = [];
         this.myForm = this.formBuilder.group({
             email: ['', Validators.required],
             password: ['', Validators.required]

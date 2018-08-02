@@ -30,6 +30,7 @@ import { EmailPage } from '../pages/email/email';
 import { ChartsModule } from 'ng2-charts';
 import { DataProvider } from '../providers/data/data';
 import { ClientsProvider } from '../providers/data/clients';
+import { UserServiceProvider } from '../providers/user-service/user-service';
 // importacion de provider clients-service
 import { ClientsServiceProvider } from '../providers/clients-service/clients-service';
 export var firebaseConfig = {
@@ -88,7 +89,8 @@ var AppModule = /** @class */ (function () {
                 { provide: ErrorHandler, useClass: IonicErrorHandler },
                 DataProvider,
                 ClientsProvider,
-                ClientsServiceProvider
+                ClientsServiceProvider,
+                UserServiceProvider
             ]
         })
     ], AppModule);

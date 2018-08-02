@@ -13,30 +13,32 @@ import { Injectable } from '@angular/core';
 var UserServiceProvider = /** @class */ (function () {
     function UserServiceProvider(http) {
         this.http = http;
+        // public body : string[];
+        this.results = [];
+        // this.session= false;
     }
-    UserServiceProvider.prototype.getUser = function () {
-        var _this = this;
-        this.http.get('http://192.168.1.66:8000/api/cskrada').subscribe(function (data) {
-            _this.results = data['service'];
-            // console.log(this.results);
-        });
-    };
     UserServiceProvider.prototype.postLogin = function (email, password) {
         var _this = this;
-        this.http.post('http://192.168.1.66:8000/api/cskrada_post', { email: email, password: password }, { headers: new HttpHeaders()
-                .set('useremail', email)
-                .set('userpassword', password)
+        this.http.post('http://192.168.1.66:8000/api/login', { email: email, password: password }, { headers: new HttpHeaders()
+                .set('authorization', 'http://localhost:4200')
+                .set('app', 'BananaCli')
         }).subscribe(function (data) {
-            _this.results = data['cskrada_post'];
+            _this.results.push(data['user']);
+            _this.results.push(data['storage']);
+            _this.results.push(data['storageName']);
             console.log(_this.results);
+            _this.session = true;
+            // this.islogged(this.session);
+        }, function (error) {
+            console.log('no');
+            _this.session = false;
+            // this.islogged(this.session);
         });
-        // this.http.post('http://192.168.1.66:8000/api/users', {
-        // 	headers: new HttpHeaders().set('Authorization', 'my-auth-token'),
-        // 	})
-        // 	.subscribe(data => {
-        // 		this.results = data['service'];
-        // 		console.log(this.results);
-        //    	});
+        console.log(this.islogged(this.session));
+    };
+    UserServiceProvider.prototype.islogged = function (session) {
+        return this.session;
+        // console.log("la sesion esta USER: ", this.session);
     };
     UserServiceProvider = __decorate([
         Injectable(),
@@ -45,4 +47,5 @@ var UserServiceProvider = /** @class */ (function () {
     return UserServiceProvider;
 }());
 export { UserServiceProvider };
+// return y asignar el valor de dato booleano, conectar user-service con app.component.ts, login
 //# sourceMappingURL=user-service.js.map

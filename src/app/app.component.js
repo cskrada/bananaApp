@@ -11,50 +11,51 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { AngularFireAuth } from 'angularfire2/auth';
+// import { AngularFireAuth } from 'angularfire2/auth';
+// import * as firebase from 'firebase/app';
+// import { Observable } from 'rxjs/Observable';
 import { HomePage } from '../pages/home/home';
 import { ClientsPage } from '../pages/clients/clients';
 import { LoginPage } from '../pages/login/login';
+// importacion de Servicio de User 
+import { UserServiceProvider } from '../providers/user-service/user-service';
 var MyApp = /** @class */ (function () {
     // --------------------------------------------------------------------------------------------
-    function MyApp(platform, statusBar, splashScreen, afAuth, menu) {
-        var _this = this;
+    function MyApp(platform, statusBar, splashScreen, 
+    // public afAuth: AngularFireAuth,
+    menu, userService) {
+        // this.afAuth.auth.signOut();
         this.platform = platform;
         this.statusBar = statusBar;
         this.splashScreen = splashScreen;
-        this.afAuth = afAuth;
         this.menu = menu;
+        this.userService = userService;
         this.rootPage = LoginPage;
-        this.afAuth.auth.signOut();
-        this.is_logged = false;
-        this.user = afAuth.authState;
-        this.afAuth.authState.subscribe(function (res) {
-            if (res && res.uid) {
-                _this.is_logged = true;
-                console.log('user is logged in_' + _this.is_logged);
-            }
-            else {
-                _this.is_logged = false;
-                console.log('user not logged in_' + _this.is_logged);
-            }
-        });
+        // this.user = afAuth.authState;
+        //   this.afAuth.authState.subscribe(res => {
+        //       if (res && res.uid) {
+        //         this.is_logged = true;                  
+        //         console.log('user is logged in_'+this.is_logged);
+        //       }else{
+        //         this.is_logged = false;
+        //         console.log('user not logged in_'+this.is_logged);
+        //       }
+        //   });
+        this.userService.postLogin(this.email, this.password);
+        // this.is_logged = this.userService.islogged(this.is_logged);
+        // console.log(this.is_logged);
+        // console.log(this.userService.islogged(this.is_logged));
         this.pages = [
             { title: 'Home', component: HomePage },
             { title: 'Clients', component: ClientsPage }
         ];
     } //------------------------------------fin de constructor-----------------------------------
-    // initializeApp() {
-    //   this.platform.ready().then(() => {
-    //     this.statusBar.styleDefault();
-    //     this.splashScreen.hide();
-    //   });
-    // }
     MyApp.prototype.openPage = function (page) {
         this.nav.setRoot(page.component);
     };
     MyApp.prototype.logOut = function () {
         this.menu.enable(false);
-        this.afAuth.auth.signOut();
+        // this.afAuth.auth.signOut();
         this.nav.setRoot(LoginPage);
     };
     __decorate([
@@ -68,10 +69,16 @@ var MyApp = /** @class */ (function () {
         __metadata("design:paramtypes", [Platform,
             StatusBar,
             SplashScreen,
-            AngularFireAuth,
-            MenuController])
+            MenuController,
+            UserServiceProvider])
     ], MyApp);
     return MyApp;
 }());
 export { MyApp };
+// initializeApp() {
+//   this.platform.ready().then(() => {
+//     this.statusBar.styleDefault();
+//     this.splashScreen.hide();
+//   });
+// }
 //# sourceMappingURL=app.component.js.map

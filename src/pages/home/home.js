@@ -16,31 +16,23 @@ var HomePage = /** @class */ (function () {
     // CONSTRUCTOR ----------------------------------------------------------------------------------------
     function HomePage(navCtrl) {
         this.navCtrl = navCtrl;
-        // grafico redondo: pieChartsLabels = son el nombre de las etiquetas
-        //                  pieChartData = aqui se debe de proporcionar los datos numericos
-        //                  pieChartType = indica el tipo de graficos
         this.pieChartLabels = ['Compras', 'Ganancias', 'Ventas'];
         this.pieChartData = [100, 500, 300];
         this.pieChartType = 'pie';
         // fin de grafico redondo
-        // grafica lineal: barChartOptions = se establecen las caracteristicas que va a tener la grafica
+        // grafica lineal
         this.barChartOptions = {
             scaleShowVerticalLines: false,
             responsive: true
         };
-        // barChartLabels = son datos que se situan como pie en el eje X de la grafica
-        // barChartType   = indica el tipo de grafica
-        // barChartLegend = dato booleano que permite la visibilidad de la leyenda
         this.barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
         this.barChartType = 'bar';
         this.barChartLegend = true;
-        // barChartData = son los datos reflejados en la grafica donde serie A y B se ve de forma comparativa
         this.barChartData = [
             { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
             { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
         ];
     }
-    // events : son los eventos de los graficos lo que convierte la misma en forma dinamica
     HomePage.prototype.chartClicked = function (e) {
         console.log(e);
     };
@@ -54,9 +46,7 @@ var HomePage = /** @class */ (function () {
     HomePage.prototype.chartHovered2 = function (e) {
         console.log(e);
     };
-    // datos aleatorios en la grafica cada vez que se actualiza
     HomePage.prototype.randomize = function () {
-        // Only Change 3 values
         var data = [
             Math.round(Math.random() * 100),
             59,
@@ -69,12 +59,6 @@ var HomePage = /** @class */ (function () {
         var clone = JSON.parse(JSON.stringify(this.barChartData));
         clone[0].data = data;
         this.barChartData = clone;
-        /**
-        * (My guess), for Angular to recognize the change in the dataset
-        * it has to change the dataset variable directly,
-        * so one way around it, is to clone the data, change it and then
-        * assign it;
-        */
     }; // fin de grafica lineal
     HomePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad HomePage');

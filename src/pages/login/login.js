@@ -11,73 +11,46 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { IonicPage, NavController, LoadingController, AlertController } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { HttpClient } from '@angular/common/http';
-//importacion de paginas
-import { HomePage } from '../home/home';
 import { SignupPage } from '../signup/signup';
 import { ResetpasswordPage } from '../resetpassword/resetpassword';
+// importacion de servicio de cliente
+import { UserServiceProvider } from '../../providers/user-service/user-service';
 var LoginPage = /** @class */ (function () {
-    function LoginPage(navCtrl, formBuilder, afAuth, alertCtrl, loadingCtrl, http) {
+    function LoginPage(navCtrl, formBuilder, alertCtrl, loadingCtrl, userService) {
         this.navCtrl = navCtrl;
         this.formBuilder = formBuilder;
-        this.afAuth = afAuth;
         this.alertCtrl = alertCtrl;
         this.loadingCtrl = loadingCtrl;
-        this.http = http;
+        this.userService = userService;
         this.myForm = this.formBuilder.group({
             email: ['', Validators.required],
             password: ['', Validators.required]
         });
     }
-    // ngOnInit(): void {
-    // 	this.testService();
-    // }
     LoginPage.prototype.ionViewDidLoad = function () {
-        this.testService();
         console.log('ionViewDidLoad LoginPage');
     };
-    // este metodo hace la validacion de los datos ingresados, esta añadida el evento de loading
-    LoginPage.prototype.loginUser = function () {
-        var _this = this;
-        console.log("Email:" + this.myForm.value.email);
-        console.log("Password:" + this.myForm.value.password);
-        this.afAuth.auth.signInWithEmailAndPassword(this.myForm.value.email, this.myForm.value.password).then(function () {
-            console.log("User logging");
-            _this.navCtrl.setRoot(HomePage);
-        }, function (err) {
-            _this.loading.dismiss().then(function () {
-                var alert = _this.alertCtrl.create({
-                    message: err.message,
-                    buttons: [
-                        {
-                            text: "Ok",
-                            role: 'cancel'
-                        }
-                    ]
-                });
-                alert.present();
-            });
-        });
-        this.loading = this.loadingCtrl.create({
-            dismissOnPageChange: true,
-        });
-        this.loading.present();
+    LoginPage.prototype.loginUser2 = function () {
+        console.log(this.myForm.value.email);
+        console.log(this.myForm.value.password);
+        // this.loginSession();		
+        this.userService.postLogin(this.myForm.value.email, this.myForm.value.password);
+        this.loginSession();
     };
-    //goToSignup(): redirige a la pagina para crear un usuario (opcional)
+    LoginPage.prototype.loginSession = function () {
+        this.me = this.userService.islogged(this.session);
+        console.log("la sesion esta LOGIN: ", this.me);
+        // if ( this.me == true  ){
+        // 	this.navCtrl.setRoot(HomePage);
+        // }else{
+        // 	console.log("no ingreso");
+        // }
+    };
     LoginPage.prototype.goToSignup = function () {
         this.navCtrl.push(SignupPage);
     };
-    //goToResetPassword(): redirige a la pagina para recuperar la contraseña
     LoginPage.prototype.goToResetPassword = function () {
         this.navCtrl.push(ResetpasswordPage);
-    };
-    LoginPage.prototype.testService = function () {
-        var _this = this;
-        this.http.get('http://192.168.1.66:8000/api/cskrada').subscribe(function (data) {
-            _this.results = data['service'];
-            // console.log(this.results);
-        });
     };
     LoginPage = __decorate([
         IonicPage(),
@@ -87,12 +60,36 @@ var LoginPage = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [NavController,
             FormBuilder,
-            AngularFireAuth,
             AlertController,
             LoadingController,
-            HttpClient])
+            UserServiceProvider])
     ], LoginPage);
     return LoginPage;
 }());
 export { LoginPage };
+// loginUser(){
+// 	console.log("Email:" + this.myForm.value.email);
+// 	console.log("Password:" + this.myForm.value.password);
+// 	this.afAuth.auth.signInWithEmailAndPassword(this.myForm.value.email, this.myForm.value.password).then(() => {
+// 		console.log("User logging");
+// 		this.navCtrl.setRoot(HomePage);
+// 		}, (err) => {
+// 		this.loading.dismiss().then( () => {
+// 			let alert = this.alertCtrl.create({
+// 				message: err.message,
+// 				buttons: [
+// 				{
+// 					text: "Ok",
+// 					role: 'cancel'
+// 				}
+// 				]
+// 			});
+// 			alert.present();
+// 		});
+// 	});
+// 	this.loading = this.loadingCtrl.create({
+// 		dismissOnPageChange: true,
+// 	});
+// 	this.loading.present();
+// }
 //# sourceMappingURL=login.js.map
