@@ -46,9 +46,9 @@ constructor(public navCtrl: NavController,
 		this.postLogin(this.myForm.value.email,this.myForm.value.password);
 
 	}
-
+// 192.168.1.66:8000 conexion globalpc
 	postLogin(email: string, password: string){
-	  	this.http.post('http://192.168.1.66:8000/api/login',
+	  	this.http.post('http://127.0.0.1:8000/api/login',
 						{ email, password }, 
 						{ headers: new HttpHeaders()
 	  						.set('authorization', 'http://localhost:4200')
